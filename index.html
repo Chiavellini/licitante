@@ -1,0 +1,1014 @@
+<title>Licitaciones Abiertas LatAm</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+:root{
+  --ground:#EFEEE9; --surface:#FAFAF8; --ink:#14202B; --ink-soft:#3A4854;
+  --muted:#697681; --rule:#D7D4CB; --rule-soft:#E4E2DA;
+  --accent:#0E5C7F; --accent-soft:#E3EDF2;
+  --urgent:#9C3D17; --urgent-soft:#F6E7DF;
+  --soon:#0E5C7F;
+  --shadow:0 1px 2px rgba(20,32,43,.06);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --ground:#121920; --surface:#182129; --ink:#E9EAE6; --ink-soft:#BFC6CB;
+    --muted:#8B98A3; --rule:#2A3640; --rule-soft:#222C35;
+    --accent:#63B0D4; --accent-soft:#16303D;
+    --urgent:#E08A5E; --urgent-soft:#33201700;
+    --soon:#63B0D4;
+    --shadow:0 1px 2px rgba(0,0,0,.3);
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#121920; --surface:#182129; --ink:#E9EAE6; --ink-soft:#BFC6CB;
+  --muted:#8B98A3; --rule:#2A3640; --rule-soft:#222C35;
+  --accent:#63B0D4; --accent-soft:#16303D;
+  --urgent:#E08A5E; --urgent-soft:#332017;
+  --soon:#63B0D4;
+  --shadow:0 1px 2px rgba(0,0,0,.3);
+}
+*{box-sizing:border-box}
+body{
+  background:var(--ground); color:var(--ink);
+  font-family:"IBM Plex Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-size:16px; line-height:1.55; margin:0;
+  padding-block:0 56px; padding-inline:16px;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:760px; margin:0 auto}
+a{color:var(--accent)}
+a:focus-visible,summary:focus-visible{outline:2px solid var(--accent); outline-offset:3px; border-radius:2px}
+
+.masthead{border-bottom:2px solid var(--ink); padding-block:32px 14px; margin-bottom:8px}
+.kicker{
+  font-family:"IBM Plex Mono",ui-monospace,monospace; font-size:.72rem;
+  letter-spacing:.14em; text-transform:uppercase; color:var(--muted); margin:0 0 10px
+}
+h1{
+  font-family:Archivo,"IBM Plex Sans",sans-serif; font-weight:700;
+  font-size:clamp(1.85rem,6vw,2.7rem); line-height:1.05; letter-spacing:-.02em;
+  margin:0 0 12px; text-wrap:balance
+}
+.lede{margin:0; color:var(--ink-soft); max-width:62ch; font-size:1.02rem}
+.counts{
+  display:flex; flex-wrap:wrap; gap:8px 22px; margin:18px 0 0;
+  font-family:"IBM Plex Mono",monospace; font-size:.8rem; color:var(--muted)
+}
+.counts b{color:var(--ink); font-weight:500; font-variant-numeric:tabular-nums}
+
+.seg{margin-top:44px}
+.seg__h{
+  font-family:Archivo,sans-serif; font-weight:600; font-size:1.22rem;
+  letter-spacing:-.01em; margin:0; text-wrap:balance
+}
+.seg__n{
+  font-family:"IBM Plex Mono",monospace; font-size:.74rem; color:var(--muted);
+  margin:2px 0 14px; font-variant-numeric:tabular-nums
+}
+.list{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:2px}
+
+.t{
+  display:grid; grid-template-columns:96px 1fr; gap:0 18px;
+  background:var(--surface); border-left:3px solid var(--rule);
+  padding:14px 16px 15px;
+}
+.t--soon{border-left-color:var(--soon)}
+.t--urgent{border-left-color:var(--urgent)}
+.t__when{
+  font-family:"IBM Plex Mono",monospace; font-size:.78rem;
+  font-variant-numeric:tabular-nums; color:var(--ink-soft);
+  display:flex; flex-direction:column; gap:3px; padding-top:2px
+}
+.t__in{
+  font-size:.68rem; letter-spacing:.06em; text-transform:uppercase; color:var(--muted)
+}
+.t--soon .t__in{color:var(--soon)}
+.t--urgent .t__in{color:var(--urgent); font-weight:500}
+.t__body{min-width:0}
+.t__title{
+  font-family:"IBM Plex Sans",sans-serif; font-weight:500; font-size:.99rem;
+  line-height:1.38; margin:0 0 5px; color:var(--ink); text-wrap:pretty
+}
+.t__meta{margin:0 0 7px; font-size:.83rem; color:var(--muted); line-height:1.45}
+.who{color:var(--ink-soft); font-weight:500}
+.dot{margin:0 7px; opacity:.5}
+.proc{font-size:.78rem}
+.ref{
+  font-family:"IBM Plex Mono",monospace; font-size:.73rem;
+  color:var(--accent); text-decoration:none; word-break:break-all
+}
+.ref:hover{text-decoration:underline}
+
+.country{margin-top:52px; padding-top:22px; border-top:2px solid var(--ink)}
+.country:first-of-type{margin-top:34px}
+.country__h{
+  font-family:Archivo,sans-serif; font-weight:700; font-size:1.55rem;
+  letter-spacing:-.02em; margin:0
+}
+.country__n{
+  font-family:"IBM Plex Mono",monospace; font-size:.76rem; color:var(--muted);
+  margin:3px 0 0; font-variant-numeric:tabular-nums
+}
+.country__note{margin:12px 0 0; font-size:.86rem; color:var(--ink-soft); max-width:62ch}
+.tablewrap{overflow-x:auto; margin-top:0}
+.bids-t{border-collapse:collapse; width:100%; font-size:.84rem; min-width:340px}
+.tcap{
+  font-family:"IBM Plex Mono",monospace; font-size:.72rem; letter-spacing:.08em;
+  text-transform:uppercase; color:var(--muted); margin:18px 0 8px; max-width:40ch
+}
+.bids-t th{
+  text-align:left; font-weight:500; font-size:.74rem; letter-spacing:.05em;
+  text-transform:uppercase; color:var(--muted); border-bottom:1px solid var(--rule);
+  padding:5px 12px 5px 0
+}
+.bids-t td{padding:6px 12px 6px 0; border-bottom:1px solid var(--rule-soft); color:var(--ink-soft)}
+.bids-t .n{text-align:right; font-family:"IBM Plex Mono",monospace;
+  font-variant-numeric:tabular-nums; color:var(--ink); padding-right:0}
+.bids-t tbody tr:last-child td{border-bottom:none}
+.bids{
+  font-family:"IBM Plex Mono",monospace; font-size:.75rem; color:var(--accent)
+}
+.note{
+  margin-top:48px; padding-top:18px; border-top:1px solid var(--rule);
+  font-size:.82rem; color:var(--muted); line-height:1.6
+}
+.note p{margin:0 0 9px; max-width:64ch}
+.note b{color:var(--ink-soft); font-weight:500}
+
+@media (max-width:540px){
+  .t{grid-template-columns:1fr; gap:6px; padding:13px 14px 14px}
+  .t__when{flex-direction:row; align-items:baseline; gap:9px; padding-top:0}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important; transition:none!important}}
+</style>
+
+<div class="wrap">
+  <header class="masthead">
+    <p class="kicker">Actualizado 15 de septiembre de 2026</p>
+    <h1>Licitaciones abiertas en América Latina</h1>
+    <p class="lede">Procesos públicos todavía abiertos en México y Colombia, agrupados por
+      tipo de trabajo. Sólo procedimientos competidos — aquellos en los que se gana
+      presentando una propuesta, no por adjudicación directa.</p>
+    <p class="counts">
+      <span><b>612</b> abiertas en México</span>
+      <span><b>2,581</b> abiertas en Colombia</span>
+      <span>fuentes: ComprasMX · SECOP II</span>
+    </p>
+  </header>
+
+  <div class="country">
+    <h2 class="country__h">México</h2>
+    <p class="country__n">612 convocatorias competidas abiertas · ComprasMX</p>
+  </div>
+
+      <section class="seg">
+        <h2 class="seg__h">Agua y saneamiento</h2>
+        <p class="seg__n">14 convocatorias abiertas</p>
+        <ul class="list">
+        <li class="t t--urgent">
+          <div class="t__when"><time datetime="2026-09-15">2026-09-15</time>
+            <span class="t__in">hoy</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Reconstrucción del Sistema de Agua Potable (la Ceiba), Xicotepec, Puebla.</h3>
+            <p class="t__meta"><span class="who">CONAGUA</span>
+              <span class="dot">·</span><span class="proc">Licitación pública</span></p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/0342f74e7281473cadfc61c71012a0de/procedimiento" target="_blank" rel="noopener">CNA-GRM-OP-130-2026 ↗</a>
+          </div>
+        </li>
+        <li class="t t--urgent">
+          <div class="t__when"><time datetime="2026-09-15">2026-09-15</time>
+            <span class="t__in">hoy</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Rehabilitación del Colector del Sistema de Drenaje Sanitario Asunción Ixtaltepec</h3>
+            <p class="t__meta"><span class="who">CEA</span>
+              <span class="dot">·</span><span class="proc">Licitación pública</span></p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/7f5eaa78102642d581466540d22e09cd/procedimiento" target="_blank" rel="noopener">LO-79-010-920024998-N-7-2026 ↗</a>
+          </div>
+        </li>
+        <li class="t t--urgent">
+          <div class="t__when"><time datetime="2026-09-15">2026-09-15</time>
+            <span class="t__in">hoy</span></div>
+          <div class="t__body">
+            <h3 class="t__title">N-380/26 Ofc Trabajos de Mitigación en Obras de Drenaje, Autopistas: México - Cu</h3>
+            <p class="t__meta"><span class="who">CAPUFE</span>
+              <span class="dot">·</span><span class="proc">Invitación a 3</span></p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/5ec916ece98240c5b744bdf5a27f6793/procedimiento" target="_blank" rel="noopener">N-380/26 OFC ↗</a>
+          </div>
+        </li>
+        <li class="t t--urgent">
+          <div class="t__when"><time datetime="2026-09-15">2026-09-15</time>
+            <span class="t__in">hoy</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Reposición de Colector</h3>
+            <p class="t__meta"><span class="who">SOP</span>
+              <span class="dot">·</span><span class="proc">Invitación a 3</span></p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/617b2d58888e43349133859445988dea/procedimiento" target="_blank" rel="noopener">IO-87-Y03-928010997-N-86-2026 ↗</a>
+          </div>
+        </li>
+        <li class="t t--urgent">
+          <div class="t__when"><time datetime="2026-09-15">2026-09-15</time>
+            <span class="t__in">hoy</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Electrificacion Hibrida Fotovoltaica</h3>
+            <p class="t__meta"><span class="who">090M25</span>
+              <span class="dot">·</span><span class="proc">Invitación a 3</span></p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/360bc68b1a34465c88875aa33fa47a6a/procedimiento" target="_blank" rel="noopener">FAISMUN-096-PANELES-PROAGUA-001-2026 ↗</a>
+          </div>
+        </li>
+        <li class="t t--urgent">
+          <div class="t__when"><time datetime="2026-09-15">2026-09-15</time>
+            <span class="t__in">hoy</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Perforacion y Aforo de Pozo de la Comunidad de el Picacho, Municipio de Ocuilan</h3>
+            <p class="t__meta"><span class="who">OCUILAN</span>
+              <span class="dot">·</span><span class="proc">Licitación pública</span></p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/480e22813f03441bba2e8a718e4735ad/procedimiento" target="_blank" rel="noopener">PMO/DOP/CIOP/PRAPDT-PROAGUA-FAISMUN/CUA.15.063.A.N.54/LP/01-03/2026 ↗</a>
+          </div>
+        </li>
+        <li class="t t--urgent">
+          <div class="t__when"><time datetime="2026-09-15">2026-09-15</time>
+            <span class="t__in">hoy</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Electrificacion Hibrida Fotovoltaica</h3>
+            <p class="t__meta"><span class="who">090M25</span>
+              <span class="dot">·</span><span class="proc">Invitación a 3</span></p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/43c33cd5a76b4325b665113390982644/procedimiento" target="_blank" rel="noopener">FAISMUN-096-PANELES-PROAGUA-002-2026 ↗</a>
+          </div>
+        </li>
+        <li class="t t--urgent">
+          <div class="t__when"><time datetime="2026-09-15">2026-09-15</time>
+            <span class="t__in">hoy</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Electrificacion Hibrida Fotovoltaica</h3>
+            <p class="t__meta"><span class="who">090M25</span>
+              <span class="dot">·</span><span class="proc">Invitación a 3</span></p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/8924e5e767bf4c28b16c826b4eebe1f4/procedimiento" target="_blank" rel="noopener">FAISMUN-096-PANELES-PROAGUA-003-2026 ↗</a>
+          </div>
+        </li>
+        <li class="t t--urgent">
+          <div class="t__when"><time datetime="2026-09-15">2026-09-15</time>
+            <span class="t__in">hoy</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Electrificacion Hibrida Fotovoltaica</h3>
+            <p class="t__meta"><span class="who">090M25</span>
+              <span class="dot">·</span><span class="proc">Invitación a 3</span></p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/4e732e765a2c4f8a98acf69fa232a73d/procedimiento" target="_blank" rel="noopener">FAISMUN-096-PANELES-PROAGUA-004-2026 ↗</a>
+          </div>
+        </li>
+        <li class="t t--urgent">
+          <div class="t__when"><time datetime="2026-09-15">2026-09-15</time>
+            <span class="t__in">hoy</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Electrificacion Hibrida Fotovoltaica</h3>
+            <p class="t__meta"><span class="who">090M25</span>
+              <span class="dot">·</span><span class="proc">Invitación a 3</span></p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/f47b58a2a0954787b361a5f66a274369/procedimiento" target="_blank" rel="noopener">FAISMUN-096-PANELES-PROAGUA-005-2026 ↗</a>
+          </div>
+        </li>
+        <li class="t t--urgent">
+          <div class="t__when"><time datetime="2026-09-15">2026-09-15</time>
+            <span class="t__in">hoy</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Rehab.de Pozo Prof.litibu, en Punta de Mita Bahia de Banderas, Nayarit.</h3>
+            <p class="t__meta"><span class="who">CEA</span>
+              <span class="dot">·</span><span class="proc">Invitación a 3</span></p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/6a7fd7ea89b14d48829aa6461c1e0494/procedimiento" target="_blank" rel="noopener">918020999-03-26-IR ↗</a>
+          </div>
+        </li>
+        <li class="t t--urgent">
+          <div class="t__when"><time datetime="2026-09-16">2026-09-16</time>
+            <span class="t__in">mañana</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Perforación (relocalización) del Pozo No. 10 del Sistema Carrillo de Pozo a 350</h3>
+            <p class="t__meta"><span class="who">091N40</span>
+              <span class="dot">·</span><span class="proc">Licitación pública</span></p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/05b3e58888a94d6b90e276368dc19525/procedimiento" target="_blank" rel="noopener">MF OP LP OF PROAGUA-01-26 ↗</a>
+          </div>
+        </li>
+        <li class="t t--urgent">
+          <div class="t__when"><time datetime="2026-09-16">2026-09-16</time>
+            <span class="t__in">mañana</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Perforación-reposición del Pozo No. 9 del Sistema Carrillo- de Pozo a 400 Mts de</h3>
+            <p class="t__meta"><span class="who">091N40</span>
+              <span class="dot">·</span><span class="proc">Licitación pública</span></p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/0c0b927a767049a3ad9ae801d71f7010/procedimiento" target="_blank" rel="noopener">MF OP LP OF PROAGUA-02-26 ↗</a>
+          </div>
+        </li>
+        <li class="t t--urgent">
+          <div class="t__when"><time datetime="2026-09-17">2026-09-17</time>
+            <span class="t__in">2 días</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Construcción de la 2DA Etapa de Ampliación Al Sistema de Alcantarillado la Cruz</h3>
+            <p class="t__meta"><span class="who">JCAS</span>
+              <span class="dot">·</span><span class="proc">Licitación pública</span></p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/351073f44bfc48f986317b87e8f2e873/procedimiento" target="_blank" rel="noopener">LO-67-018-908040997-N-11- 2026 ↗</a>
+          </div>
+        </li>
+        </ul>
+      </section>
+      <section class="seg">
+        <h2 class="seg__h">Caminos y pavimentación</h2>
+        <p class="seg__n">14 convocatorias abiertas</p>
+        <ul class="list">
+        <li class="t t--urgent">
+          <div class="t__when"><time datetime="2026-09-15">2026-09-15</time>
+            <span class="t__in">hoy</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Reconstrucción del Puente &quot;xuchipantla&quot;</h3>
+            <p class="t__meta"><span class="who">SICT</span>
+              <span class="dot">·</span><span class="proc">Licitación pública</span></p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/5efebe6818ec4f069ce43ca3b8f6a732/procedimiento" target="_blank" rel="noopener">LO-09-210-009000999-N-925-2026 ↗</a>
+          </div>
+        </li>
+        <li class="t t--urgent">
+          <div class="t__when"><time datetime="2026-09-15">2026-09-15</time>
+            <span class="t__in">hoy</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Pavimentación, Guarniciones y Banquetas de Concreto Hidráulico en la Calle Priva</h3>
+            <p class="t__meta"><span class="who">091N40</span>
+              <span class="dot">·</span><span class="proc">Invitación a 3</span></p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/7d6ec1f417ff4ffc9648be1c862e2dc1/procedimiento" target="_blank" rel="noopener">MF OP IR OF RVUPE-01-26 ↗</a>
+          </div>
+        </li>
+        <li class="t t--urgent">
+          <div class="t__when"><time datetime="2026-09-15">2026-09-15</time>
+            <span class="t__in">hoy</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Pavimentacion Calle Enrique Cardenas Gonzalez</h3>
+            <p class="t__meta"><span class="who">087I84</span>
+              <span class="dot">·</span><span class="proc">Invitación a 3</span></p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/5c7a1f86c3ae4e6d97f6300f7b8879f7/procedimiento" target="_blank" rel="noopener">COP/IR-053/2026 ↗</a>
+          </div>
+        </li>
+        <li class="t t--urgent">
+          <div class="t__when"><time datetime="2026-09-15">2026-09-15</time>
+            <span class="t__in">hoy</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Construcción del Puente &quot;las Pilas&quot;</h3>
+            <p class="t__meta"><span class="who">SICT</span>
+              <span class="dot">·</span><span class="proc">Licitación pública</span></p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/81bdd6d0fcaf4b698a36fda5f4959320/procedimiento" target="_blank" rel="noopener">LO-09-210-009000999-N-924-2026 ↗</a>
+          </div>
+        </li>
+        <li class="t t--urgent">
+          <div class="t__when"><time datetime="2026-09-17">2026-09-17</time>
+            <span class="t__in">2 días</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Construcción de Carretera con Concreto Asfaltico Tramo: Joloapan-linda Tarde, Lo</h3>
+            <p class="t__meta"><span class="who">089L47</span>
+              <span class="dot">·</span><span class="proc">Invitación a 3</span><span class="dot">·</span>junta 2026-09-15</p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/a2c2ef5a31c94380acfaa9d2707b5f07/procedimiento" target="_blank" rel="noopener">MPA/REMFEFMPHT2025/30/124/0352-IR ↗</a>
+          </div>
+        </li>
+        <li class="t t--urgent">
+          <div class="t__when"><time datetime="2026-09-17">2026-09-17</time>
+            <span class="t__in">2 días</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Io-89-y24-930007995-n-47-2026</h3>
+            <p class="t__meta"><span class="who">SIOPVER</span>
+              <span class="dot">·</span><span class="proc">Invitación a 3</span></p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/a605dc8c94f04b7a9d1daa23edf3ac0e/procedimiento" target="_blank" rel="noopener">IO-89-Y24-930007995-N-47-2026 ↗</a>
+          </div>
+        </li>
+        <li class="t t--urgent">
+          <div class="t__when"><time datetime="2026-09-17">2026-09-17</time>
+            <span class="t__in">2 días</span></div>
+          <div class="t__body">
+            <h3 class="t__title">N-387/26 Ofc Trabajos de Conservación a Base de Bacheo Profundo Aislado, Recorte</h3>
+            <p class="t__meta"><span class="who">CAPUFE</span>
+              <span class="dot">·</span><span class="proc">Licitación pública</span></p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/cf9a76bd32a84a359a5488083e75bbd8/procedimiento" target="_blank" rel="noopener">N-387/26 OFC ↗</a>
+          </div>
+        </li>
+        <li class="t t--urgent">
+          <div class="t__when"><time datetime="2026-09-17">2026-09-17</time>
+            <span class="t__in">2 días</span></div>
+          <div class="t__body">
+            <h3 class="t__title">N-388/26 Ofc Trabajos de Conservación a Base de Bacheo Profundo Aislado, Recorte</h3>
+            <p class="t__meta"><span class="who">CAPUFE</span>
+              <span class="dot">·</span><span class="proc">Licitación pública</span></p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/ec409c892c514375902da6da44c189ba/procedimiento" target="_blank" rel="noopener">N-388/26 OFC ↗</a>
+          </div>
+        </li>
+        <li class="t t--urgent">
+          <div class="t__when"><time datetime="2026-09-17">2026-09-17</time>
+            <span class="t__in">2 días</span></div>
+          <div class="t__body">
+            <h3 class="t__title">N-389/26 Ofc Trabajos de Conservación a Base de Bacheo Profundo Aislado, Recorte</h3>
+            <p class="t__meta"><span class="who">CAPUFE</span>
+              <span class="dot">·</span><span class="proc">Licitación pública</span></p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/46575fa5dad04271a3344e28432ac1b2/procedimiento" target="_blank" rel="noopener">N-389/26 OFC ↗</a>
+          </div>
+        </li>
+        <li class="t t--urgent">
+          <div class="t__when"><time datetime="2026-09-17">2026-09-17</time>
+            <span class="t__in">2 días</span></div>
+          <div class="t__body">
+            <h3 class="t__title">302construcción de Pavimentación con Concreto Hidráulico, Guarniciones y Banquet</h3>
+            <p class="t__meta"><span class="who">089L64</span>
+              <span class="dot">·</span><span class="proc">Invitación a 3</span></p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/5065f21c09c3487c991b7a1cbb29e1f7/procedimiento" target="_blank" rel="noopener">2026301890302 ↗</a>
+          </div>
+        </li>
+        <li class="t t--urgent">
+          <div class="t__when"><time datetime="2026-09-18">2026-09-18</time>
+            <span class="t__in">3 días</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Trabajos de Conservación en la Carretera</h3>
+            <p class="t__meta"><span class="who">SOP</span>
+              <span class="dot">·</span><span class="proc">Invitación a 3</span></p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/2d1fccf7b74e45c1882067a111f3291b/procedimiento" target="_blank" rel="noopener">IO-87-Y03-928010997-N-87-2026 ↗</a>
+          </div>
+        </li>
+        <li class="t t--urgent">
+          <div class="t__when"><time datetime="2026-09-18">2026-09-18</time>
+            <span class="t__in">3 días</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Rehabilitación Asfáltica, Bacheo Superficial</h3>
+            <p class="t__meta"><span class="who">SOP</span>
+              <span class="dot">·</span><span class="proc">Invitación a 3</span></p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/06c3c27b5f0b4281aab25c5004d0fce3/procedimiento" target="_blank" rel="noopener">NO. IO-87-Y03-928010997-N-92-2026 ↗</a>
+          </div>
+        </li>
+        <li class="t t--soon">
+          <div class="t__when"><time datetime="2026-09-21">2026-09-21</time>
+            <span class="t__in">6 días</span></div>
+          <div class="t__body">
+            <h3 class="t__title">N-385/26 Ofc Trabajos de Conservación en el Puente la Misión Cuerpo a y B Km 69+</h3>
+            <p class="t__meta"><span class="who">CAPUFE</span>
+              <span class="dot">·</span><span class="proc">Invitación a 3</span><span class="dot">·</span>junta 2026-09-15</p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/e1408a5e3f8440d6a777c3f8a617d44c/procedimiento" target="_blank" rel="noopener">N-385/26 OFC ↗</a>
+          </div>
+        </li>
+        <li class="t t--soon">
+          <div class="t__when"><time datetime="2026-09-21">2026-09-21</time>
+            <span class="t__in">6 días</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Supervisión y Control de Calidad de la Obra: Trabajos de Conservaci</h3>
+            <p class="t__meta"><span class="who">CAPUFE</span>
+              <span class="dot">·</span><span class="proc">Invitación a 3</span><span class="dot">·</span>junta 2026-09-15</p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/042d5ad88a4f4b44b5f7b91eba06f8c9/procedimiento" target="_blank" rel="noopener">N-386/26 OFC SUPERVISIÓN Y CONTROL DE CALIDAD DE LA OBRA: TRABAJOS DE CONSERVACI ↗</a>
+          </div>
+        </li>
+        </ul>
+      </section>
+      <section class="seg">
+        <h2 class="seg__h">Electrificación y alumbrado</h2>
+        <p class="seg__n">14 convocatorias abiertas</p>
+        <ul class="list">
+        <li class="t t--urgent">
+          <div class="t__when"><time datetime="2026-09-15">2026-09-15</time>
+            <span class="t__in">hoy</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Pavimentacion Calle Enrique Cardenas Gonzalez</h3>
+            <p class="t__meta"><span class="who">087I84</span>
+              <span class="dot">·</span><span class="proc">Invitación a 3</span></p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/5c7a1f86c3ae4e6d97f6300f7b8879f7/procedimiento" target="_blank" rel="noopener">COP/IR-053/2026 ↗</a>
+          </div>
+        </li>
+        <li class="t t--urgent">
+          <div class="t__when"><time datetime="2026-09-15">2026-09-15</time>
+            <span class="t__in">hoy</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Electrificacion Hibrida Fotovoltaica</h3>
+            <p class="t__meta"><span class="who">090M25</span>
+              <span class="dot">·</span><span class="proc">Invitación a 3</span></p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/360bc68b1a34465c88875aa33fa47a6a/procedimiento" target="_blank" rel="noopener">FAISMUN-096-PANELES-PROAGUA-001-2026 ↗</a>
+          </div>
+        </li>
+        <li class="t t--urgent">
+          <div class="t__when"><time datetime="2026-09-15">2026-09-15</time>
+            <span class="t__in">hoy</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Electrificacion Hibrida Fotovoltaica</h3>
+            <p class="t__meta"><span class="who">090M25</span>
+              <span class="dot">·</span><span class="proc">Invitación a 3</span></p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/43c33cd5a76b4325b665113390982644/procedimiento" target="_blank" rel="noopener">FAISMUN-096-PANELES-PROAGUA-002-2026 ↗</a>
+          </div>
+        </li>
+        <li class="t t--urgent">
+          <div class="t__when"><time datetime="2026-09-15">2026-09-15</time>
+            <span class="t__in">hoy</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Electrificacion Hibrida Fotovoltaica</h3>
+            <p class="t__meta"><span class="who">090M25</span>
+              <span class="dot">·</span><span class="proc">Invitación a 3</span></p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/8924e5e767bf4c28b16c826b4eebe1f4/procedimiento" target="_blank" rel="noopener">FAISMUN-096-PANELES-PROAGUA-003-2026 ↗</a>
+          </div>
+        </li>
+        <li class="t t--urgent">
+          <div class="t__when"><time datetime="2026-09-15">2026-09-15</time>
+            <span class="t__in">hoy</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Electrificacion Hibrida Fotovoltaica</h3>
+            <p class="t__meta"><span class="who">090M25</span>
+              <span class="dot">·</span><span class="proc">Invitación a 3</span></p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/4e732e765a2c4f8a98acf69fa232a73d/procedimiento" target="_blank" rel="noopener">FAISMUN-096-PANELES-PROAGUA-004-2026 ↗</a>
+          </div>
+        </li>
+        <li class="t t--urgent">
+          <div class="t__when"><time datetime="2026-09-15">2026-09-15</time>
+            <span class="t__in">hoy</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Electrificacion Hibrida Fotovoltaica</h3>
+            <p class="t__meta"><span class="who">090M25</span>
+              <span class="dot">·</span><span class="proc">Invitación a 3</span></p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/f47b58a2a0954787b361a5f66a274369/procedimiento" target="_blank" rel="noopener">FAISMUN-096-PANELES-PROAGUA-005-2026 ↗</a>
+          </div>
+        </li>
+        <li class="t t--soon">
+          <div class="t__when"><time datetime="2026-09-21">2026-09-21</time>
+            <span class="t__in">6 días</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Bachillerato Nacional &quot;margarita Maza&quot;, Heroica Ciudad de Huajuapan de León</h3>
+            <p class="t__meta"><span class="who">IOCIED</span>
+              <span class="dot">·</span><span class="proc">Licitación pública</span><span class="dot">·</span>junta 2026-09-15</p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/3782630c2ba24fa8b640529e01cc7fc4/procedimiento" target="_blank" rel="noopener">LO-79-019-920039997-N02-2026 ↗</a>
+          </div>
+        </li>
+        <li class="t t--soon">
+          <div class="t__when"><time datetime="2026-09-21">2026-09-21</time>
+            <span class="t__in">6 días</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Bachillerato Nacional &quot;margarita Maza&quot;, Heroica Ciudad de Juchitán de Zaragoza</h3>
+            <p class="t__meta"><span class="who">IOCIED</span>
+              <span class="dot">·</span><span class="proc">Licitación pública</span><span class="dot">·</span>junta 2026-09-15</p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/3008cc755c174ef9a12eb708f0d568be/procedimiento" target="_blank" rel="noopener">LO-79-019-920039997-N03-2026 ↗</a>
+          </div>
+        </li>
+        <li class="t t--soon">
+          <div class="t__when"><time datetime="2026-09-21">2026-09-21</time>
+            <span class="t__in">6 días</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Bachillerato Nacional &quot;margarita Maza&quot;, San Francisco Lachigoló</h3>
+            <p class="t__meta"><span class="who">IOCIED</span>
+              <span class="dot">·</span><span class="proc">Licitación pública</span><span class="dot">·</span>junta 2026-09-15</p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/65432c8fa79140829459b6a74c164902/procedimiento" target="_blank" rel="noopener">LO-79-019-920039997-N04-2026 ↗</a>
+          </div>
+        </li>
+        <li class="t t--soon">
+          <div class="t__when"><time datetime="2026-09-21">2026-09-21</time>
+            <span class="t__in">6 días</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Bachillerato Nacional &quot;margarita Maza&quot;, Santa Cruz Xoxocotlán</h3>
+            <p class="t__meta"><span class="who">IOCIED</span>
+              <span class="dot">·</span><span class="proc">Licitación pública</span><span class="dot">·</span>junta 2026-09-15</p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/c71e847adf404e62988d442c97b9f6fc/procedimiento" target="_blank" rel="noopener">LO-79-019-920039997-N05-2026 ↗</a>
+          </div>
+        </li>
+        <li class="t t--soon">
+          <div class="t__when"><time datetime="2026-09-21">2026-09-21</time>
+            <span class="t__in">6 días</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Bachillerato Nacional &quot;margarita Maza&quot;, San Jorge Nuchita</h3>
+            <p class="t__meta"><span class="who">IOCIED</span>
+              <span class="dot">·</span><span class="proc">Licitación pública</span><span class="dot">·</span>junta 2026-09-15</p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/830381e1c7d24ef297572f8d6a358c4f/procedimiento" target="_blank" rel="noopener">LO-79-019-920039997-N06-2026 ↗</a>
+          </div>
+        </li>
+        <li class="t t--soon">
+          <div class="t__when"><time datetime="2026-09-21">2026-09-21</time>
+            <span class="t__in">6 días</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Bachillerato Nacional &quot;margarita Maza&quot;, Soledad Etla</h3>
+            <p class="t__meta"><span class="who">IOCIED</span>
+              <span class="dot">·</span><span class="proc">Licitación pública</span><span class="dot">·</span>junta 2026-09-15</p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/1403c45c20b145b3a5ebc0ce70bbaf03/procedimiento" target="_blank" rel="noopener">LO-79-019-920039997-N07-2026 ↗</a>
+          </div>
+        </li>
+        <li class="t t--normal">
+          <div class="t__when"><time datetime="2026-09-24">2026-09-24</time>
+            <span class="t__in">9 días</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Supervisión y Verificación de Calidad en el Estado de Chiapas</h3>
+            <p class="t__meta"><span class="who">SICT</span>
+              <span class="dot">·</span><span class="proc">Licitación pública</span><span class="dot">·</span>junta 2026-09-17</p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/421c233e5ab648ccafbd5ce7160dd75e/procedimiento" target="_blank" rel="noopener">LO-09-210-009000999-N-945-2026 ↗</a>
+          </div>
+        </li>
+        <li class="t t--normal">
+          <div class="t__when"><time datetime="2026-09-25">2026-09-25</time>
+            <span class="t__in">10 días</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Rehabilitación de Red de Alumbrado</h3>
+            <p class="t__meta"><span class="who">SOP</span>
+              <span class="dot">·</span><span class="proc">Invitación a 3</span><span class="dot">·</span>junta 2026-09-18</p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/1eb7d8adf2c7498a8b8a696cc42fd78c/procedimiento" target="_blank" rel="noopener">IO-87-Y03-928010997-N-96-2026 ↗</a>
+          </div>
+        </li>
+        </ul>
+      </section>
+
+  <div class="country">
+    <h2 class="country__h">Colombia</h2>
+    <p class="country__n">2,581 procesos competidos abiertos · SECOP II</p>
+    <p class="tcap">Cuántos oferentes atrae cada modalidad, en promedio</p>
+    <div class="tablewrap"><table class="bids-t">
+      <thead><tr><th>Modalidad</th><th class="n">Procesos</th><th class="n">Ofertas</th></tr></thead>
+      <tbody><tr><td>Mínima cuantía</td><td class="n">1,569</td><td class="n">4.2</td></tr><tr><td>Selección Abreviada de Menor Cuantía</td><td class="n">586</td><td class="n">4.4</td></tr><tr><td>Selección abreviada subasta inversa</td><td class="n">112</td><td class="n">6.4</td></tr><tr><td>Licitación pública</td><td class="n">87</td><td class="n">6.5</td></tr><tr><td>Concurso de méritos abierto</td><td class="n">227</td><td class="n">22.5</td></tr></tbody>
+    </table></div>
+    <p class="country__note">La licitación pública mueve los montos más altos y atrae menos
+      oferentes que el concurso de méritos. Vale la pena mirar esa relación antes de decidir
+      dónde competir.</p>
+  </div>
+      <section class="seg">
+        <h2 class="seg__h">Agua y saneamiento</h2>
+        <p class="seg__n">10 procesos abiertos</p>
+        <ul class="list">
+        <li class="t t--normal">
+          <div class="t__when"><time datetime="2026-07-27">2026-07-27</time>
+            <span class="t__in">COP 3,585,781,557</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Interventoría Técnica; Administrativa; Contable; Jurídica y Financiera para la Contratación por Precios Unitarios Fijos Sin Fórmula de Ajuste de las Actividades Necesarias en la Operación y Mantenimie</h3>
+            <p class="t__meta"><span class="who">Unidad de Servicios Penitenciarios y Carcelarios - Uspec1</span>
+              <span class="dot">·</span>Distrito Capital de Bogotá
+              <span class="dot">·</span><span class="proc">Concurso de méritos abierto</span></p>
+            <p class="t__meta"><span class="bids">13 ofertas· suele atraer ~22</span></p>
+            <a class="ref" href="https://community.secop.gov.co/Public/Tendering/OpportunityDetail/Index?noticeUID=CO1.NTC.10591604" target="_blank" rel="noopener">Ver proceso ↗</a>
+          </div>
+        </li>
+        <li class="t t--normal">
+          <div class="t__when"><time datetime="2026-08-26">2026-08-26</time>
+            <span class="t__in">COP 1,423,551,669</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Monitoreo y Automatizacion Sistema de Acueducto la Leonera (manifestación de Interés (menor Cuantía)) (presentación de Oferta)</h3>
+            <p class="t__meta"><span class="who">Santiago de Cali Distrito Especial - Unidad Administrativa Especial de Servicios Publicos</span>
+              <span class="dot">·</span>Valle del Cauca
+              <span class="dot">·</span><span class="proc">Selección Abreviada de Menor Cuantía</span></p>
+            <p class="t__meta"><span class="bids">2 ofertas· suele atraer ~4</span></p>
+            <a class="ref" href="https://community.secop.gov.co/Public/Tendering/OpportunityDetail/Index?noticeUID=CO1.NTC.10782754" target="_blank" rel="noopener">Ver proceso ↗</a>
+          </div>
+        </li>
+        <li class="t t--normal">
+          <div class="t__when"><time datetime="2026-08-18">2026-08-18</time>
+            <span class="t__in">COP 1,195,607,455</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Concurso de Merito Abierto (presentación de Oferta)</h3>
+            <p class="t__meta"><span class="who">Alcaldia Municipio de Santander de Quilichao</span>
+              <span class="dot">·</span>Cauca
+              <span class="dot">·</span><span class="proc">Concurso de méritos abierto</span></p>
+            <p class="t__meta"><span class="bids">2 ofertas· suele atraer ~22</span></p>
+            <a class="ref" href="https://community.secop.gov.co/Public/Tendering/OpportunityDetail/Index?noticeUID=CO1.NTC.10729467" target="_blank" rel="noopener">Ver proceso ↗</a>
+          </div>
+        </li>
+        <li class="t t--normal">
+          <div class="t__when"><time datetime="2026-08-11">2026-08-11</time>
+            <span class="t__in">COP 1,050,000,000</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Mantenimiento y Reparación de Plantas de Tratamiento de Aguas Residuales; Agua Potable; Agua Industrial; Pozos Profundos y Pozos Sépticos de las Bases de la Dirección de Antinarcóticos - Policía Nacio</h3>
+            <p class="t__meta"><span class="who">Direccion de Antinarcoticos</span>
+              <span class="dot">·</span>Distrito Capital de Bogotá
+              <span class="dot">·</span><span class="proc">Selección Abreviada de Menor Cuantía</span></p>
+            <p class="t__meta"><span class="bids">4 ofertas· suele atraer ~4</span></p>
+            <a class="ref" href="https://community.secop.gov.co/Public/Tendering/OpportunityDetail/Index?noticeUID=CO1.NTC.10688076" target="_blank" rel="noopener">Ver proceso ↗</a>
+          </div>
+        </li>
+        <li class="t t--normal">
+          <div class="t__when"><time datetime="2026-09-07">2026-09-07</time>
+            <span class="t__in">COP 898,654,292</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Interventoría Técnica; Administrativa; Jurídica; Contable; Financiera y Ambiental Al Contrato de Construccion del Acueducto en el Municipio la Esperanza en Norte de Santander (presentación de Oferta)</h3>
+            <p class="t__meta"><span class="who">Gobernación Norte de Santander*</span>
+              <span class="dot">·</span>Norte de Santander
+              <span class="dot">·</span><span class="proc">Concurso de méritos abierto</span></p>
+            <p class="t__meta"><span class="bids">6 ofertas· suele atraer ~22</span></p>
+            <a class="ref" href="https://community.secop.gov.co/Public/Tendering/OpportunityDetail/Index?noticeUID=CO1.NTC.10853392" target="_blank" rel="noopener">Ver proceso ↗</a>
+          </div>
+        </li>
+        <li class="t t--normal">
+          <div class="t__when"><time datetime="2026-08-19">2026-08-19</time>
+            <span class="t__in">COP 737,518,368</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Implementación del Nodo Idesc de Información para los Sistemas de Acueducto en la Zona Rural del Distrito de Santiago de Cali - Corregimiento la Buitrera y Villacarmelo (presentación de Oferta)</h3>
+            <p class="t__meta"><span class="who">Santiago de Cali Distrito Especial - Unidad Administrativa Especial de Servicios Publicos</span>
+              <span class="dot">·</span>Valle del Cauca
+              <span class="dot">·</span><span class="proc">Concurso de méritos abierto</span></p>
+            <p class="t__meta"><span class="bids">1 ofertas· suele atraer ~22</span></p>
+            <a class="ref" href="https://community.secop.gov.co/Public/Tendering/OpportunityDetail/Index?noticeUID=CO1.NTC.10737684" target="_blank" rel="noopener">Ver proceso ↗</a>
+          </div>
+        </li>
+        <li class="t t--normal">
+          <div class="t__when"><time datetime="2026-08-26">2026-08-26</time>
+            <span class="t__in">COP 700,000,000</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Consultoría Especializada para Desarrollo Fase I y Fase Ii del Plan de Aseguramiento de la Prestación de los Servicios Públicos de Acueducto; Alcantarillado y Aseo en el Área Urbana de los Municipios</h3>
+            <p class="t__meta"><span class="who">Gobernación Norte de Santander*</span>
+              <span class="dot">·</span>Norte de Santander
+              <span class="dot">·</span><span class="proc">Concurso de méritos abierto</span></p>
+            <p class="t__meta"><span class="bids">1 ofertas· suele atraer ~22</span></p>
+            <a class="ref" href="https://community.secop.gov.co/Public/Tendering/OpportunityDetail/Index?noticeUID=CO1.NTC.10782037" target="_blank" rel="noopener">Ver proceso ↗</a>
+          </div>
+        </li>
+        <li class="t t--normal">
+          <div class="t__when"><time datetime="2026-07-28">2026-07-28</time>
+            <span class="t__in">COP 681,382,400</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Realizar Obras de Mejoramiento del Sistema de Acueducto en la Vereda Alto Aguacatal - Corregimiento la Elvira y la Vereda la Elvira - Corregimiento la Elvira en la Zona Rural de Santiago de Cali (mani</h3>
+            <p class="t__meta"><span class="who">Santiago de Cali Distrito Especial - Unidad Administrativa Especial de Servicios Publicos</span>
+              <span class="dot">·</span>Valle del Cauca
+              <span class="dot">·</span><span class="proc">Selección Abreviada de Menor Cuantía</span></p>
+            <p class="t__meta"><span class="bids">2 ofertas· suele atraer ~4</span></p>
+            <a class="ref" href="https://community.secop.gov.co/Public/Tendering/OpportunityDetail/Index?noticeUID=CO1.NTC.10595138" target="_blank" rel="noopener">Ver proceso ↗</a>
+          </div>
+        </li>
+        <li class="t t--normal">
+          <div class="t__when"><time datetime="2026-08-28">2026-08-28</time>
+            <span class="t__in">COP 608,932,772</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Interventoria a Estudios y Diseños Sistemas de Agua Potable en el Departamento del Quindio (presentación de Oferta)</h3>
+            <p class="t__meta"><span class="who">Gobernacion del Quindio Armenia</span>
+              <span class="dot">·</span>Quindío
+              <span class="dot">·</span><span class="proc">Concurso de méritos abierto</span></p>
+            <p class="t__meta"><span class="bids">2 ofertas· suele atraer ~22</span></p>
+            <a class="ref" href="https://community.secop.gov.co/Public/Tendering/OpportunityDetail/Index?noticeUID=CO1.NTC.10798073" target="_blank" rel="noopener">Ver proceso ↗</a>
+          </div>
+        </li>
+        <li class="t t--normal">
+          <div class="t__when"><time datetime="2026-08-21">2026-08-21</time>
+            <span class="t__in">COP 542,417,202</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Obra de Mejoramiento Vereda el Banqueo; Corregimiento de Pance; y la Vereda las Palmas Fase Ii - Corregimiento la Castilla (manifestación de Interés (menor Cuantía)) (presentación de Oferta)</h3>
+            <p class="t__meta"><span class="who">Santiago de Cali Distrito Especial - Unidad Administrativa Especial de Servicios Publicos</span>
+              <span class="dot">·</span>Valle del Cauca
+              <span class="dot">·</span><span class="proc">Selección Abreviada de Menor Cuantía</span></p>
+            <p class="t__meta"><span class="bids">1 ofertas· suele atraer ~4</span></p>
+            <a class="ref" href="https://community.secop.gov.co/Public/Tendering/OpportunityDetail/Index?noticeUID=CO1.NTC.10751435" target="_blank" rel="noopener">Ver proceso ↗</a>
+          </div>
+        </li>
+        </ul>
+      </section>
+      <section class="seg">
+        <h2 class="seg__h">Vías e infraestructura</h2>
+        <p class="seg__n">10 procesos abiertos</p>
+        <ul class="list">
+        <li class="t t--normal">
+          <div class="t__when"><time datetime="2026-08-11">2026-08-11</time>
+            <span class="t__in">COP 2,909,387,358</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Interventoria Técnica; Administrativa; Financiera; Juridica; Contable y Ambiental Al Contrato de Obra Cuyo Objeto Es Mejoramiento de la Vía Cruce Ruta 6209 - el Llano de Sotaquirá en el Departamento D</h3>
+            <p class="t__meta"><span class="who">Gobernación de Boyacá</span>
+              <span class="dot">·</span>Boyacá
+              <span class="dot">·</span><span class="proc">Concurso de méritos abierto</span></p>
+            <p class="t__meta"><span class="bids">59 ofertas· suele atraer ~22</span></p>
+            <a class="ref" href="https://community.secop.gov.co/Public/Tendering/OpportunityDetail/Index?noticeUID=CO1.NTC.10690166" target="_blank" rel="noopener">Ver proceso ↗</a>
+          </div>
+        </li>
+        <li class="t t--normal">
+          <div class="t__when"><time datetime="2026-08-05">2026-08-05</time>
+            <span class="t__in">COP 2,890,383,422</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Interventoria Obras de Construcción de Malla Vial (presentación de Oferta)</h3>
+            <p class="t__meta"><span class="who">Fondo de Desarrollo Local de Bosa</span>
+              <span class="dot">·</span>Distrito Capital de Bogotá
+              <span class="dot">·</span><span class="proc">Concurso de méritos abierto</span></p>
+            <p class="t__meta"><span class="bids">93 ofertas· suele atraer ~22</span></p>
+            <a class="ref" href="https://community.secop.gov.co/Public/Tendering/OpportunityDetail/Index?noticeUID=CO1.NTC.10659003" target="_blank" rel="noopener">Ver proceso ↗</a>
+          </div>
+        </li>
+        <li class="t t--normal">
+          <div class="t__when"><time datetime="2026-08-11">2026-08-11</time>
+            <span class="t__in">COP 2,847,560,747</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Interventoria Técnica; Administrativa; Financiera; Juridica; Contable y Ambiental Al Contrato de Obra Cuyo Objeto Es Mejoramiento de Via Secundaria Entre los Municipios de Chivata y Toca en el Departa</h3>
+            <p class="t__meta"><span class="who">Gobernación de Boyacá</span>
+              <span class="dot">·</span>Boyacá
+              <span class="dot">·</span><span class="proc">Concurso de méritos abierto</span></p>
+            <p class="t__meta"><span class="bids">61 ofertas· suele atraer ~22</span></p>
+            <a class="ref" href="https://community.secop.gov.co/Public/Tendering/OpportunityDetail/Index?noticeUID=CO1.NTC.10690156" target="_blank" rel="noopener">Ver proceso ↗</a>
+          </div>
+        </li>
+        <li class="t t--normal">
+          <div class="t__when"><time datetime="2026-06-30">2026-06-30</time>
+            <span class="t__in">COP 2,755,000,000</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Interventoría Integral para la Gestión Vial Integral de la Ruta Nacional 50 - Tramo 5008; Sector: Honda Villeta; Tramo 5007; Sector: Puente Luis Ignacio Andrade en Honda (variante Honda - Puerto Bogot</h3>
+            <p class="t__meta"><span class="who">Invias</span>
+              <span class="dot">·</span>Distrito Capital de Bogotá
+              <span class="dot">·</span><span class="proc">Concurso de méritos abierto</span></p>
+            <p class="t__meta"><span class="bids">55 ofertas· suele atraer ~22</span></p>
+            <a class="ref" href="https://community.secop.gov.co/Public/Tendering/OpportunityDetail/Index?noticeUID=CO1.NTC.10431924" target="_blank" rel="noopener">Ver proceso ↗</a>
+          </div>
+        </li>
+        <li class="t t--normal">
+          <div class="t__when"><time datetime="2026-07-01">2026-07-01</time>
+            <span class="t__in">COP 2,718,073,000</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Interventoría Integral para el Mejoramiento y Obras Complementarias de la Vía 3202b Cruce Candelaria Crucero la Industria para la Conexión con Florida en el Departamento del Valle del Cauca (presentac</h3>
+            <p class="t__meta"><span class="who">Invias</span>
+              <span class="dot">·</span>Distrito Capital de Bogotá
+              <span class="dot">·</span><span class="proc">Concurso de méritos abierto</span></p>
+            <p class="t__meta"><span class="bids">110 ofertas· suele atraer ~22</span></p>
+            <a class="ref" href="https://community.secop.gov.co/Public/Tendering/OpportunityDetail/Index?noticeUID=CO1.NTC.10438656" target="_blank" rel="noopener">Ver proceso ↗</a>
+          </div>
+        </li>
+        <li class="t t--normal">
+          <div class="t__when"><time datetime="2026-07-17">2026-07-17</time>
+            <span class="t__in">COP 2,269,370,341</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Iccu-cm-037-2026 (presentación de Oferta)</h3>
+            <p class="t__meta"><span class="who">Instituto de Caminos y Construcciones de Cundinamarca - Iccu</span>
+              <span class="dot">·</span>Distrito Capital de Bogotá
+              <span class="dot">·</span><span class="proc">Concurso de méritos abierto</span></p>
+            <p class="t__meta"><span class="bids">146 ofertas· suele atraer ~22</span></p>
+            <a class="ref" href="https://community.secop.gov.co/Public/Tendering/OpportunityDetail/Index?noticeUID=CO1.NTC.10534486" target="_blank" rel="noopener">Ver proceso ↗</a>
+          </div>
+        </li>
+        <li class="t t--normal">
+          <div class="t__when"><time datetime="2026-07-14">2026-07-14</time>
+            <span class="t__in">COP 1,822,181,431</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Interventoría Integral para la Rehabilitacion y Mantenimiento de la Via Duitama - la Palmera; Ruta 55 Tramo 5503; Departamento de Boyaca (presentación de Oferta)</h3>
+            <p class="t__meta"><span class="who">Invias</span>
+              <span class="dot">·</span>Distrito Capital de Bogotá
+              <span class="dot">·</span><span class="proc">Concurso de méritos abierto</span></p>
+            <p class="t__meta"><span class="bids">140 ofertas· suele atraer ~22</span></p>
+            <a class="ref" href="https://community.secop.gov.co/Public/Tendering/OpportunityDetail/Index?noticeUID=CO1.NTC.10509822" target="_blank" rel="noopener">Ver proceso ↗</a>
+          </div>
+        </li>
+        <li class="t t--normal">
+          <div class="t__when"><time datetime="2026-08-18">2026-08-18</time>
+            <span class="t__in">COP 1,713,335,185</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Mujeres Puente Aranda (presentación de Oferta)</h3>
+            <p class="t__meta"><span class="who">Alcaldia Local de Puente Aranda-fondo de Desarrollo Local</span>
+              <span class="dot">·</span>Distrito Capital de Bogotá
+              <span class="dot">·</span><span class="proc">Licitación pública</span></p>
+            <p class="t__meta"><span class="bids">12 ofertas· suele atraer ~6</span></p>
+            <a class="ref" href="https://community.secop.gov.co/Public/Tendering/OpportunityDetail/Index?noticeUID=CO1.NTC.10729859" target="_blank" rel="noopener">Ver proceso ↗</a>
+          </div>
+        </li>
+        <li class="t t--normal">
+          <div class="t__when"><time datetime="2026-07-03">2026-07-03</time>
+            <span class="t__in">COP 1,490,001,285</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Interventoría Integral para la Gestión Vial Integral de la Carretera los Alpes - Madrid - Bogotá; Tramo 5008a y Variante de Madrid; Tramo 50cng; en el Departamento de Cundinamarca (presentación de Ofe</h3>
+            <p class="t__meta"><span class="who">Invias</span>
+              <span class="dot">·</span>Distrito Capital de Bogotá
+              <span class="dot">·</span><span class="proc">Concurso de méritos abierto</span></p>
+            <p class="t__meta"><span class="bids">58 ofertas· suele atraer ~22</span></p>
+            <a class="ref" href="https://community.secop.gov.co/Public/Tendering/OpportunityDetail/Index?noticeUID=CO1.NTC.10453251" target="_blank" rel="noopener">Ver proceso ↗</a>
+          </div>
+        </li>
+        <li class="t t--normal">
+          <div class="t__when"><time datetime="2026-08-28">2026-08-28</time>
+            <span class="t__in">COP 1,420,835,278</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Interventoria (presentación de Oferta)</h3>
+            <p class="t__meta"><span class="who">Gobierno Departamental</span>
+              <span class="dot">·</span>Tolima
+              <span class="dot">·</span><span class="proc">Concurso de méritos abierto</span></p>
+            <p class="t__meta"><span class="bids">85 ofertas· suele atraer ~22</span></p>
+            <a class="ref" href="https://community.secop.gov.co/Public/Tendering/OpportunityDetail/Index?noticeUID=CO1.NTC.10795904" target="_blank" rel="noopener">Ver proceso ↗</a>
+          </div>
+        </li>
+        </ul>
+      </section>
+      <section class="seg">
+        <h2 class="seg__h">Edificación y mantenimiento</h2>
+        <p class="seg__n">10 procesos abiertos</p>
+        <ul class="list">
+        <li class="t t--normal">
+          <div class="t__when"><time datetime="2026-07-23">2026-07-23</time>
+            <span class="t__in">COP 42,019,882,118</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Mesa de Servicios (presentación de Oferta)</h3>
+            <p class="t__meta"><span class="who">Rama Judicial  Dirección Ejecutiva de Administración Judicial</span>
+              <span class="dot">·</span>Distrito Capital de Bogotá
+              <span class="dot">·</span><span class="proc">Licitación pública</span></p>
+            <p class="t__meta"><span class="bids">9 ofertas· suele atraer ~6</span></p>
+            <a class="ref" href="https://community.secop.gov.co/Public/Tendering/OpportunityDetail/Index?noticeUID=CO1.NTC.10569734" target="_blank" rel="noopener">Ver proceso ↗</a>
+          </div>
+        </li>
+        <li class="t t--normal">
+          <div class="t__when"><time datetime="2026-08-19">2026-08-19</time>
+            <span class="t__in">COP 13,391,382,966</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Contratar la Interventoría Técnica; Administrativa; Financiera; Contable; Jurídica; Ambiental y de Seguridad y Salud en el Trabajo (sst) Al Contrato Cuyo Objeto Es Construcción Bajo la Modalidad Llave</h3>
+            <p class="t__meta"><span class="who">Hospital Universitario San Juan de Dios y Materno Infantil</span>
+              <span class="dot">·</span>Distrito Capital de Bogotá
+              <span class="dot">·</span><span class="proc">Concurso de méritos abierto</span></p>
+            <p class="t__meta"><span class="bids">10 ofertas· suele atraer ~22</span></p>
+            <a class="ref" href="https://community.secop.gov.co/Public/Tendering/OpportunityDetail/Index?noticeUID=CO1.NTC.10737781" target="_blank" rel="noopener">Ver proceso ↗</a>
+          </div>
+        </li>
+        <li class="t t--normal">
+          <div class="t__when"><time datetime="2026-07-10">2026-07-10</time>
+            <span class="t__in">COP 3,301,893,050</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Sgc-lp-003-2026 Copia (presentación de Oferta)</h3>
+            <p class="t__meta"><span class="who">Servicio Geologico Colombiano**</span>
+              <span class="dot">·</span>Distrito Capital de Bogotá
+              <span class="dot">·</span><span class="proc">Licitación pública</span></p>
+            <p class="t__meta"><span class="bids">2 ofertas· suele atraer ~6</span></p>
+            <a class="ref" href="https://community.secop.gov.co/Public/Tendering/OpportunityDetail/Index?noticeUID=CO1.NTC.10497186" target="_blank" rel="noopener">Ver proceso ↗</a>
+          </div>
+        </li>
+        <li class="t t--normal">
+          <div class="t__when"><time datetime="2026-07-02">2026-07-02</time>
+            <span class="t__in">COP 3,100,862,418</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Consultoría Integral de Estudios y Diseños para la Construcción de Equipamentos Borde (presentación de Oferta)</h3>
+            <p class="t__meta"><span class="who">Secretaría Distrital de Cultura, Recreación y Deporte</span>
+              <span class="dot">·</span>Distrito Capital de Bogotá
+              <span class="dot">·</span><span class="proc">Concurso de méritos abierto</span></p>
+            <p class="t__meta"><span class="bids">16 ofertas· suele atraer ~22</span></p>
+            <a class="ref" href="https://community.secop.gov.co/Public/Tendering/OpportunityDetail/Index?noticeUID=CO1.NTC.10445018" target="_blank" rel="noopener">Ver proceso ↗</a>
+          </div>
+        </li>
+        <li class="t t--normal">
+          <div class="t__when"><time datetime="2026-08-04">2026-08-04</time>
+            <span class="t__in">COP 2,858,000,000</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Prestación de Servicios de Soporte Técnico Especializado y Mantenimiento Preventivo y Correctivo del Sistema de Gestión Documental Electrónica Sgde Alfresco de la Rama Judicial (presentación de Ofert</h3>
+            <p class="t__meta"><span class="who">Rama Judicial  Dirección Ejecutiva de Administración Judicial</span>
+              <span class="dot">·</span>Distrito Capital de Bogotá
+              <span class="dot">·</span><span class="proc">Selección abreviada subasta inversa</span></p>
+            <p class="t__meta"><span class="bids">1 ofertas· suele atraer ~6</span></p>
+            <a class="ref" href="https://community.secop.gov.co/Public/Tendering/OpportunityDetail/Index?noticeUID=CO1.NTC.10650242" target="_blank" rel="noopener">Ver proceso ↗</a>
+          </div>
+        </li>
+        <li class="t t--normal">
+          <div class="t__when"><time datetime="2026-07-01">2026-07-01</time>
+            <span class="t__in">COP 2,414,174,800</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Interventoría Integral para Mejoramiento y Mantenimiento del Corredor Plato - Tenerife - Real del Obispo; Ruta Nacional 2701; en el Departamento del Magdalena (presentación de Oferta)</h3>
+            <p class="t__meta"><span class="who">Invias</span>
+              <span class="dot">·</span>Distrito Capital de Bogotá
+              <span class="dot">·</span><span class="proc">Concurso de méritos abierto</span></p>
+            <p class="t__meta"><span class="bids">104 ofertas· suele atraer ~22</span></p>
+            <a class="ref" href="https://community.secop.gov.co/Public/Tendering/OpportunityDetail/Index?noticeUID=CO1.NTC.10438654" target="_blank" rel="noopener">Ver proceso ↗</a>
+          </div>
+        </li>
+        <li class="t t--normal">
+          <div class="t__when"><time datetime="2026-08-10">2026-08-10</time>
+            <span class="t__in">COP 2,210,532,625</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Pn Disan Cm 001 2026. (presentación de Oferta)</h3>
+            <p class="t__meta"><span class="who">Direccion de Sanidad de la Policia Nacional - Disan Ponal</span>
+              <span class="dot">·</span>Distrito Capital de Bogotá
+              <span class="dot">·</span><span class="proc">Concurso de méritos abierto</span></p>
+            <p class="t__meta"><span class="bids">18 ofertas· suele atraer ~22</span></p>
+            <a class="ref" href="https://community.secop.gov.co/Public/Tendering/OpportunityDetail/Index?noticeUID=CO1.NTC.10682822" target="_blank" rel="noopener">Ver proceso ↗</a>
+          </div>
+        </li>
+        <li class="t t--normal">
+          <div class="t__when"><time datetime="2026-07-20">2026-07-20</time>
+            <span class="t__in">COP 1,750,437,429</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Cma-001-2026 (presentación de Oferta)</h3>
+            <p class="t__meta"><span class="who">Alcaldia Municipal de Viotá</span>
+              <span class="dot">·</span>Cundinamarca
+              <span class="dot">·</span><span class="proc">Concurso de méritos abierto</span></p>
+            <p class="t__meta"><span class="bids">1 ofertas· suele atraer ~22</span></p>
+            <a class="ref" href="https://community.secop.gov.co/Public/Tendering/OpportunityDetail/Index?noticeUID=CO1.NTC.10544729" target="_blank" rel="noopener">Ver proceso ↗</a>
+          </div>
+        </li>
+        <li class="t t--normal">
+          <div class="t__when"><time datetime="2026-07-10">2026-07-10</time>
+            <span class="t__in">COP 1,750,000,000</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Realizar el Mantenimiento de Canales para el Manejo de Aguas Lluvias en el Aeropuerto Vargas Santos de Tame (manifestación de Interés (menor Cuantía)) (presentación de Oferta)</h3>
+            <p class="t__meta"><span class="who">Aerocivil</span>
+              <span class="dot">·</span>Distrito Capital de Bogotá
+              <span class="dot">·</span><span class="proc">Selección Abreviada de Menor Cuantía</span></p>
+            <p class="t__meta"><span class="bids">4 ofertas· suele atraer ~4</span></p>
+            <a class="ref" href="https://community.secop.gov.co/Public/Tendering/OpportunityDetail/Index?noticeUID=CO1.NTC.10495750" target="_blank" rel="noopener">Ver proceso ↗</a>
+          </div>
+        </li>
+        <li class="t t--normal">
+          <div class="t__when"><time datetime="2026-08-18">2026-08-18</time>
+            <span class="t__in">COP 1,700,000,000</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Reparaciones Locativas de Mantenimiento y Mejoramiento de la Infraestructura Física (manifestación de Interés (menor Cuantía)) (presentación de Oferta)</h3>
+            <p class="t__meta"><span class="who">Rama Judicial  Dirección Seccional de Administración Judicial de Santa Marta</span>
+              <span class="dot">·</span>Magdalena
+              <span class="dot">·</span><span class="proc">Selección Abreviada de Menor Cuantía</span></p>
+            <p class="t__meta"><span class="bids">3 ofertas· suele atraer ~4</span></p>
+            <a class="ref" href="https://community.secop.gov.co/Public/Tendering/OpportunityDetail/Index?noticeUID=CO1.NTC.10725993" target="_blank" rel="noopener">Ver proceso ↗</a>
+          </div>
+        </li>
+        </ul>
+      </section>
+
+  <footer class="note">
+    <p><b>Cómo leer esta lista.</b> La fecha es la <b>apertura de proposiciones</b>: el
+      momento en que se abren las ofertas, no la junta de aclaraciones. Cada referencia
+      enlaza a la convocatoria oficial, donde están las bases, los requisitos de
+      participación y los criterios de evaluación.</p>
+    <p><b>Adjudicaciones directas no aparecen.</b> Esta lista incluye únicamente
+      procedimientos en los que se compite presentando una propuesta.</p>
+    <p><b>Colombia: el número de ofertas es del propio SECOP II.</b> Indica cuántos
+      proveedores respondieron a procesos comparables — útil para estimar la competencia
+      antes de invertir en preparar una propuesta. México no publica este dato.</p>
+    <p><b>Sólo procesos recientes.</b> Más de 19,000 registros colombianos conservan el
+      estado «Abierto» pero se publicaron hace más de un año y nunca se cerraron. Aquí se
+      listan únicamente los publicados en los últimos 90 días.</p>
+    <p>Datos de ComprasMX (Secretaría Anticorrupción y Buen Gobierno) y SECOP II
+      (Colombia Compra Eficiente). Información pública
+      reproducida con fines informativos. Verifique siempre la convocatoria oficial antes
+      de preparar una propuesta: las fechas pueden modificarse.</p>
+  </footer>
+</div>
