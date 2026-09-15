@@ -1,4 +1,24 @@
-<title>Licitaciones Abiertas LatAm</title>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Licitaciones públicas abiertas en México y Colombia — licitante.mx</title>
+<meta name="description" content="Lista semanal de licitaciones públicas competidas abiertas en México y Colombia. Información pública, sin costo y sin registro.">
+<link rel="canonical" href="https://licitante.mx/">
+<!-- Evergreen on purpose. WhatsApp and Facebook cache a scrape for days or weeks, so a count or
+     a date here would keep misreporting long after the page refreshes -- on a link whose whole
+     job is to be forwarded. -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="licitante.mx">
+<meta property="og:locale" content="es_MX">
+<meta property="og:url" content="https://licitante.mx/">
+<meta property="og:title" content="Licitaciones públicas abiertas en México y Colombia">
+<meta property="og:description" content="Lista semanal de procedimientos competidos abiertos, con su fecha de apertura y el enlace a cada convocatoria. Información pública, sin costo y sin registro.">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Licitaciones públicas abiertas en México y Colombia">
+<meta name="twitter:description" content="Lista semanal de procedimientos competidos abiertos. Sin costo y sin registro.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230E5C7F'/%3E%3Crect x='7' y='8' width='18' height='2.6' fill='%23EFEEE9'/%3E%3Crect x='7' y='14.7' width='18' height='2.6' fill='%23EFEEE9'/%3E%3Crect x='7' y='21.4' width='11' height='2.6' fill='%239C3D17'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
@@ -6,29 +26,30 @@
 :root{
   --ground:#EFEEE9; --surface:#FAFAF8; --ink:#14202B; --ink-soft:#3A4854;
   --muted:#697681; --rule:#D7D4CB; --rule-soft:#E4E2DA;
-  --accent:#0E5C7F; --accent-soft:#E3EDF2;
-  --urgent:#9C3D17; --urgent-soft:#F6E7DF;
+  --accent:#0E5C7F;
+  --urgent:#9C3D17;
   --soon:#0E5C7F;
-  --shadow:0 1px 2px rgba(20,32,43,.06);
 }
 @media (prefers-color-scheme:dark){
-  :root:not([data-theme="light"]){
+  :root{
     --ground:#121920; --surface:#182129; --ink:#E9EAE6; --ink-soft:#BFC6CB;
-    --muted:#8B98A3; --rule:#2A3640; --rule-soft:#222C35;
-    --accent:#63B0D4; --accent-soft:#16303D;
-    --urgent:#E08A5E; --urgent-soft:#33201700;
+    --muted:#98A5B0; --rule:#2A3640; --rule-soft:#222C35;
+    --accent:#63B0D4;
+    --urgent:#E08A5E;
     --soon:#63B0D4;
-    --shadow:0 1px 2px rgba(0,0,0,.3);
   }
 }
-:root[data-theme="dark"]{
-  --ground:#121920; --surface:#182129; --ink:#E9EAE6; --ink-soft:#BFC6CB;
-  --muted:#8B98A3; --rule:#2A3640; --rule-soft:#222C35;
-  --accent:#63B0D4; --accent-soft:#16303D;
-  --urgent:#E08A5E; --urgent-soft:#332017;
-  --soon:#63B0D4;
-  --shadow:0 1px 2px rgba(0,0,0,.3);
-}
+.pub{margin:14px 0 0;font-size:.9rem;line-height:1.5;color:var(--ink-soft);
+  border-left:3px solid var(--accent);padding-left:12px}
+.cta{margin:34px 0 8px;padding:20px 22px;background:var(--surface);
+  border:1px solid var(--rule);border-left:3px solid var(--accent)}
+.cta h2{font-family:Archivo,system-ui,sans-serif;font-size:1.12rem;margin:0 0 8px;
+  letter-spacing:-.01em}
+.cta p{margin:0 0 10px;font-size:.94rem;line-height:1.6;color:var(--ink-soft)}
+.cta__go{margin:0;font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:1rem}
+.cta__go a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent);
+  display:inline-block;padding:6px 0}
+.cta__go a:hover{border-bottom-width:2px}
 *{box-sizing:border-box}
 body{
   background:var(--ground); color:var(--ink);
@@ -143,7 +164,8 @@ h1{
 }
 @media (prefers-reduced-motion:reduce){*{animation:none!important; transition:none!important}}
 </style>
-
+</head>
+<body>
 <div class="wrap">
   <header class="masthead">
     <p class="kicker">Actualizado 15 de septiembre de 2026</p>
@@ -152,151 +174,862 @@ h1{
       tipo de trabajo. Sólo procedimientos competidos — aquellos en los que se gana
       presentando una propuesta, no por adjudicación directa.</p>
     <p class="counts">
-      <span><b>612</b> abiertas en México</span>
+      <span><b>557</b> abiertas en México · 109 listadas aquí</span>
       <span><b>2,581</b> abiertas en Colombia</span>
       <span>fuentes: ComprasMX · SECOP II</span>
     </p>
+    <p class="pub">Publicado por <b>licitante.mx</b>. Preparamos la propuesta técnica completa
+      —anexos, manifestaciones y la matriz de cumplimiento contra la propia convocatoria—
+      cuando usted lo indique.</p>
   </header>
 
   <div class="country">
     <h2 class="country__h">México</h2>
-    <p class="country__n">612 convocatorias competidas abiertas · ComprasMX</p>
+    <p class="country__n">557 convocatorias competidas abiertas · ComprasMX</p>
   </div>
 
       <section class="seg">
-        <h2 class="seg__h">Agua y saneamiento</h2>
-        <p class="seg__n">14 convocatorias abiertas</p>
+        <h2 class="seg__h">Salud — equipo médico e insumos</h2>
+        <p class="seg__n">39 abiertas · 10 listadas</p>
         <ul class="list">
         <li class="t t--urgent">
-          <div class="t__when"><time datetime="2026-09-15">2026-09-15</time>
-            <span class="t__in">hoy</span></div>
+          <div class="t__when"><time datetime="2026-09-17">2026-09-17</time>
+            <span class="t__in">2 días</span></div>
           <div class="t__body">
-            <h3 class="t__title">Reconstrucción del Sistema de Agua Potable (la Ceiba), Xicotepec, Puebla.</h3>
-            <p class="t__meta"><span class="who">CONAGUA</span>
+            <h3 class="t__title">Adquisición de Equipo Didactico para el Cesiecq Siglo Xxi</h3>
+            <p class="t__meta"><span class="who">IMSS</span>
+              <span class="dot">·</span><span class="proc">Invitación a 3</span></p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/ed55b9ffe5b0471e9d21bd83fc2a2a02/procedimiento" target="_blank" rel="noopener">IA-50-GYR-050GYR025-T-74-2026 ↗</a>
+          </div>
+        </li>
+        <li class="t t--urgent">
+          <div class="t__when"><time datetime="2026-09-17">2026-09-17</time>
+            <span class="t__in">2 días</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Adquisición de Materiales de Construcción para la Infraestructura Hospitalaria</h3>
+            <p class="t__meta"><span class="who">ISSSTE</span>
+              <span class="dot">·</span><span class="proc">Invitación a 3</span></p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/34a62fcd6a0b49babc83950db621f0a4/procedimiento" target="_blank" rel="noopener">ADQUISICIÓN DE MATERIALES DE CONSTRUCCIÓN PARA LA INFRAESTRUCTURA HOSPITALARIA ↗</a>
+          </div>
+        </li>
+        <li class="t t--urgent">
+          <div class="t__when"><time datetime="2026-09-17">2026-09-17</time>
+            <span class="t__in">2 días</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Adquisición de Insumos de Reproducción Humana</h3>
+            <p class="t__meta"><span class="who">ISSSTE</span>
+              <span class="dot">·</span><span class="proc">Invitación a 3</span></p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/ef304ba1336645a09f9216e81196ace6/procedimiento" target="_blank" rel="noopener">ADQUISICIÓN DE INSUMOS DE REPRODUCCIÓN HUMANA ↗</a>
+          </div>
+        </li>
+        <li class="t t--urgent">
+          <div class="t__when"><time datetime="2026-09-17">2026-09-17</time>
+            <span class="t__in">2 días</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Grupo 210 Ropa Contractual para 34 Partidas, Zona a y Zona B</h3>
+            <p class="t__meta"><span class="who">IMSS</span>
               <span class="dot">·</span><span class="proc">Licitación pública</span></p>
-            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/0342f74e7281473cadfc61c71012a0de/procedimiento" target="_blank" rel="noopener">CNA-GRM-OP-130-2026 ↗</a>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/2c41a59be5f24bad8fa1b8a09f890a19/procedimiento" target="_blank" rel="noopener">LA-50-GYR-050GYR120-N-18-2026 ↗</a>
           </div>
         </li>
         <li class="t t--urgent">
-          <div class="t__when"><time datetime="2026-09-15">2026-09-15</time>
-            <span class="t__in">hoy</span></div>
+          <div class="t__when"><time datetime="2026-09-17">2026-09-17</time>
+            <span class="t__in">2 días</span></div>
           <div class="t__body">
-            <h3 class="t__title">Rehabilitación del Colector del Sistema de Drenaje Sanitario Asunción Ixtaltepec</h3>
-            <p class="t__meta"><span class="who">CEA</span>
+            <h3 class="t__title">Grupo 210 Ropa Contractual para 14 Partidas, Zona a y Zona B, Régimen Ordinario</h3>
+            <p class="t__meta"><span class="who">IMSS</span>
               <span class="dot">·</span><span class="proc">Licitación pública</span></p>
-            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/7f5eaa78102642d581466540d22e09cd/procedimiento" target="_blank" rel="noopener">LO-79-010-920024998-N-7-2026 ↗</a>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/5c469ae978f54b17b3f525ac7f773b50/procedimiento" target="_blank" rel="noopener">LA-50-GYR-050GYR120-N-20-2026 ↗</a>
           </div>
         </li>
         <li class="t t--urgent">
-          <div class="t__when"><time datetime="2026-09-15">2026-09-15</time>
-            <span class="t__in">hoy</span></div>
+          <div class="t__when"><time datetime="2026-09-17">2026-09-17</time>
+            <span class="t__in">2 días</span></div>
           <div class="t__body">
-            <h3 class="t__title">N-380/26 Ofc Trabajos de Mitigación en Obras de Drenaje, Autopistas: México - Cu</h3>
-            <p class="t__meta"><span class="who">CAPUFE</span>
-              <span class="dot">·</span><span class="proc">Invitación a 3</span></p>
-            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/5ec916ece98240c5b744bdf5a27f6793/procedimiento" target="_blank" rel="noopener">N-380/26 OFC ↗</a>
-          </div>
-        </li>
-        <li class="t t--urgent">
-          <div class="t__when"><time datetime="2026-09-15">2026-09-15</time>
-            <span class="t__in">hoy</span></div>
-          <div class="t__body">
-            <h3 class="t__title">Reposición de Colector</h3>
-            <p class="t__meta"><span class="who">SOP</span>
-              <span class="dot">·</span><span class="proc">Invitación a 3</span></p>
-            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/617b2d58888e43349133859445988dea/procedimiento" target="_blank" rel="noopener">IO-87-Y03-928010997-N-86-2026 ↗</a>
-          </div>
-        </li>
-        <li class="t t--urgent">
-          <div class="t__when"><time datetime="2026-09-15">2026-09-15</time>
-            <span class="t__in">hoy</span></div>
-          <div class="t__body">
-            <h3 class="t__title">Electrificacion Hibrida Fotovoltaica</h3>
-            <p class="t__meta"><span class="who">090M25</span>
-              <span class="dot">·</span><span class="proc">Invitación a 3</span></p>
-            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/360bc68b1a34465c88875aa33fa47a6a/procedimiento" target="_blank" rel="noopener">FAISMUN-096-PANELES-PROAGUA-001-2026 ↗</a>
-          </div>
-        </li>
-        <li class="t t--urgent">
-          <div class="t__when"><time datetime="2026-09-15">2026-09-15</time>
-            <span class="t__in">hoy</span></div>
-          <div class="t__body">
-            <h3 class="t__title">Perforacion y Aforo de Pozo de la Comunidad de el Picacho, Municipio de Ocuilan</h3>
-            <p class="t__meta"><span class="who">OCUILAN</span>
+            <h3 class="t__title">Adquisición de Faboterápicos para las Unidades Médicas Dependientes del O.p.d Se</h3>
+            <p class="t__meta"><span class="who">SECRETARÍA DE SALUD (JAL)</span>
               <span class="dot">·</span><span class="proc">Licitación pública</span></p>
-            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/480e22813f03441bba2e8a718e4735ad/procedimiento" target="_blank" rel="noopener">PMO/DOP/CIOP/PRAPDT-PROAGUA-FAISMUN/CUA.15.063.A.N.54/LP/01-03/2026 ↗</a>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/babae6f10c144e7cb86508580d1195f8/procedimiento" target="_blank" rel="noopener">OPDSSJ/SGPS/DCYPENZ/1107/2026 ↗</a>
           </div>
         </li>
         <li class="t t--urgent">
-          <div class="t__when"><time datetime="2026-09-15">2026-09-15</time>
-            <span class="t__in">hoy</span></div>
+          <div class="t__when"><time datetime="2026-09-17">2026-09-17</time>
+            <span class="t__in">2 días</span></div>
           <div class="t__body">
-            <h3 class="t__title">Electrificacion Hibrida Fotovoltaica</h3>
-            <p class="t__meta"><span class="who">090M25</span>
+            <h3 class="t__title">25501 Materiales, Accesorios y Suministros de Laboratorios</h3>
+            <p class="t__meta"><span class="who">CECYTECH</span>
               <span class="dot">·</span><span class="proc">Invitación a 3</span></p>
-            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/43c33cd5a76b4325b665113390982644/procedimiento" target="_blank" rel="noopener">FAISMUN-096-PANELES-PROAGUA-002-2026 ↗</a>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/4e2e792b596f4f1d98e6219140d6e63d/procedimiento" target="_blank" rel="noopener">MATERIALES Y SUMINISTROS PARA LABORATORIO DE 9 PLANTELES ↗</a>
           </div>
         </li>
         <li class="t t--urgent">
-          <div class="t__when"><time datetime="2026-09-15">2026-09-15</time>
-            <span class="t__in">hoy</span></div>
+          <div class="t__when"><time datetime="2026-09-18">2026-09-18</time>
+            <span class="t__in">3 días</span></div>
           <div class="t__body">
-            <h3 class="t__title">Electrificacion Hibrida Fotovoltaica</h3>
-            <p class="t__meta"><span class="who">090M25</span>
+            <h3 class="t__title">Adquisición de Consumibles y Accesorios de Equipo Medico (equipo en Comodato), C</h3>
+            <p class="t__meta"><span class="who">IMSS</span>
               <span class="dot">·</span><span class="proc">Invitación a 3</span></p>
-            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/8924e5e767bf4c28b16c826b4eebe1f4/procedimiento" target="_blank" rel="noopener">FAISMUN-096-PANELES-PROAGUA-003-2026 ↗</a>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/f284b727082d49029330708805892aea/procedimiento" target="_blank" rel="noopener">089001150100/CAE/2071/2026 ↗</a>
           </div>
         </li>
         <li class="t t--urgent">
-          <div class="t__when"><time datetime="2026-09-15">2026-09-15</time>
-            <span class="t__in">hoy</span></div>
+          <div class="t__when"><time datetime="2026-09-18">2026-09-18</time>
+            <span class="t__in">3 días</span></div>
           <div class="t__body">
-            <h3 class="t__title">Electrificacion Hibrida Fotovoltaica</h3>
-            <p class="t__meta"><span class="who">090M25</span>
-              <span class="dot">·</span><span class="proc">Invitación a 3</span></p>
-            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/4e732e765a2c4f8a98acf69fa232a73d/procedimiento" target="_blank" rel="noopener">FAISMUN-096-PANELES-PROAGUA-004-2026 ↗</a>
-          </div>
-        </li>
-        <li class="t t--urgent">
-          <div class="t__when"><time datetime="2026-09-15">2026-09-15</time>
-            <span class="t__in">hoy</span></div>
-          <div class="t__body">
-            <h3 class="t__title">Electrificacion Hibrida Fotovoltaica</h3>
-            <p class="t__meta"><span class="who">090M25</span>
-              <span class="dot">·</span><span class="proc">Invitación a 3</span></p>
-            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/f47b58a2a0954787b361a5f66a274369/procedimiento" target="_blank" rel="noopener">FAISMUN-096-PANELES-PROAGUA-005-2026 ↗</a>
-          </div>
-        </li>
-        <li class="t t--urgent">
-          <div class="t__when"><time datetime="2026-09-15">2026-09-15</time>
-            <span class="t__in">hoy</span></div>
-          <div class="t__body">
-            <h3 class="t__title">Rehab.de Pozo Prof.litibu, en Punta de Mita Bahia de Banderas, Nayarit.</h3>
-            <p class="t__meta"><span class="who">CEA</span>
-              <span class="dot">·</span><span class="proc">Invitación a 3</span></p>
-            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/6a7fd7ea89b14d48829aa6461c1e0494/procedimiento" target="_blank" rel="noopener">918020999-03-26-IR ↗</a>
-          </div>
-        </li>
-        <li class="t t--urgent">
-          <div class="t__when"><time datetime="2026-09-16">2026-09-16</time>
-            <span class="t__in">mañana</span></div>
-          <div class="t__body">
-            <h3 class="t__title">Perforación (relocalización) del Pozo No. 10 del Sistema Carrillo de Pozo a 350</h3>
-            <p class="t__meta"><span class="who">091N40</span>
+            <h3 class="t__title">Adquisición de Artículos del Grupo 379 Consumibles</h3>
+            <p class="t__meta"><span class="who">IMSS</span>
               <span class="dot">·</span><span class="proc">Licitación pública</span></p>
-            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/05b3e58888a94d6b90e276368dc19525/procedimiento" target="_blank" rel="noopener">MF OP LP OF PROAGUA-01-26 ↗</a>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/e5ae974d30d946c2a5f13699ff8558cb/procedimiento" target="_blank" rel="noopener">CAE-ORIENTE-031 ↗</a>
           </div>
         </li>
         <li class="t t--urgent">
-          <div class="t__when"><time datetime="2026-09-16">2026-09-16</time>
-            <span class="t__in">mañana</span></div>
+          <div class="t__when"><time datetime="2026-09-18">2026-09-18</time>
+            <span class="t__in">3 días</span></div>
           <div class="t__body">
-            <h3 class="t__title">Perforación-reposición del Pozo No. 9 del Sistema Carrillo- de Pozo a 400 Mts de</h3>
-            <p class="t__meta"><span class="who">091N40</span>
+            <h3 class="t__title">Adquisición de 39 Partidas de Equipo Asociado a Obra - Equipamiento Médico Inst</h3>
+            <p class="t__meta"><span class="who">IMSS</span>
               <span class="dot">·</span><span class="proc">Licitación pública</span></p>
-            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/0c0b927a767049a3ad9ae801d71f7010/procedimiento" target="_blank" rel="noopener">MF OP LP OF PROAGUA-02-26 ↗</a>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/04497763f465493c8bdb96bf021132ce/procedimiento" target="_blank" rel="noopener">ADQUISICIÓN DE 39 PARTIDAS DE EQUIPO ASOCIADO A OBRA - EQUIPAMIENTO MÉDICO INST ↗</a>
           </div>
         </li>
+        </ul>
+      </section>
+      <section class="seg">
+        <h2 class="seg__h">Salud — servicios clínicos y subrogados</h2>
+        <p class="seg__n">78 abiertas · 10 listadas</p>
+        <ul class="list">
+        <li class="t t--urgent">
+          <div class="t__when"><time datetime="2026-09-17">2026-09-17</time>
+            <span class="t__in">2 días</span></div>
+          <div class="t__body">
+            <h3 class="t__title">La-n99-2026 Servicio Medico Integral de Oftalmologia para el Hgr 17</h3>
+            <p class="t__meta"><span class="who">IMSS</span>
+              <span class="dot">·</span><span class="proc">Licitación pública</span></p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/02e64398149f4c1e8f3bd37b46c72420/procedimiento" target="_blank" rel="noopener">LA-N99-2026 ↗</a>
+          </div>
+        </li>
+        <li class="t t--urgent">
+          <div class="t__when"><time datetime="2026-09-17">2026-09-17</time>
+            <span class="t__in">2 días</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Smi de Hemodinamia</h3>
+            <p class="t__meta"><span class="who">IMSS</span>
+              <span class="dot">·</span><span class="proc">Licitación pública</span></p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/d94d3a73a9994e0fa8a95c982b5944a5/procedimiento" target="_blank" rel="noopener">UMAE/YUC/BC/348/2026 ↗</a>
+          </div>
+        </li>
+        <li class="t t--urgent">
+          <div class="t__when"><time datetime="2026-09-17">2026-09-17</time>
+            <span class="t__in">2 días</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Servicio Médico Integral Hemodinámica y Radiología 2026</h3>
+            <p class="t__meta"><span class="who">IMSS</span>
+              <span class="dot">·</span><span class="proc">Licitación pública</span></p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/9c9cf9e7922744b8b4c6ebfcfb7ad69c/procedimiento" target="_blank" rel="noopener">SERVICIO MÉDICO INTEGRAL HEMODINÁMICA Y RADIOLOGÍA 2026 ↗</a>
+          </div>
+        </li>
+        <li class="t t--urgent">
+          <div class="t__when"><time datetime="2026-09-17">2026-09-17</time>
+            <span class="t__in">2 días</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Servicio Medico Integral de Digitalización para Concluir el Ejercicio 2026</h3>
+            <p class="t__meta"><span class="who">IMSS</span>
+              <span class="dot">·</span><span class="proc">Licitación pública</span></p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/ece17712068a4e46a155b1cff36a05d0/procedimiento" target="_blank" rel="noopener">SERVICIO MEDICO INTEGRAL DE DIGITALIZACIÓN PARA CONCLUIR EL EJERCICIO 2026 ↗</a>
+          </div>
+        </li>
+        <li class="t t--urgent">
+          <div class="t__when"><time datetime="2026-09-17">2026-09-17</time>
+            <span class="t__in">2 días</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Suministro de Oxígeno Medicinal Hospitalario, Gases Medicinales E Industriales E</h3>
+            <p class="t__meta"><span class="who">IMSS</span>
+              <span class="dot">·</span><span class="proc">Licitación pública</span></p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/c5cf052c972e43429466b7ec87db5f5e/procedimiento" target="_blank" rel="noopener">LA-50-GYR-050GYR001-N-91-2026 ↗</a>
+          </div>
+        </li>
+        <li class="t t--urgent">
+          <div class="t__when"><time datetime="2026-09-17">2026-09-17</time>
+            <span class="t__in">2 días</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Invitacion a Cuando Menos Tres Personas</h3>
+            <p class="t__meta"><span class="who">IMSS</span>
+              <span class="dot">·</span><span class="proc">Invitación a 3</span></p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/e8891fdf51a74fc4923e88ab1bfce6e3/procedimiento" target="_blank" rel="noopener">IA-50-GYR-050GYR979-N-23-2026 ↗</a>
+          </div>
+        </li>
+        <li class="t t--urgent">
+          <div class="t__when"><time datetime="2026-09-17">2026-09-17</time>
+            <span class="t__in">2 días</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Servicio de Mantenimiento Preventivo Y/o Correctivo a Sistemas de Bombeo Program</h3>
+            <p class="t__meta"><span class="who">IMSS</span>
+              <span class="dot">·</span><span class="proc">Licitación pública</span></p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/7a138997a960445e991f4a2cee7b3b27/procedimiento" target="_blank" rel="noopener">LA-50-GYR-050GYR022-N-197-2026 ↗</a>
+          </div>
+        </li>
+        <li class="t t--urgent">
+          <div class="t__when"><time datetime="2026-09-17">2026-09-17</time>
+            <span class="t__in">2 días</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Servicio de Mantenimiento Preventivo de Sistemas Experimentales</h3>
+            <p class="t__meta"><span class="who">IMP</span>
+              <span class="dot">·</span><span class="proc">Invitación a 3</span></p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/2d56d9971fbc4df99bf03c1f4d23aa36/procedimiento" target="_blank" rel="noopener">1202600515 ↗</a>
+          </div>
+        </li>
+        <li class="t t--urgent">
+          <div class="t__when"><time datetime="2026-09-17">2026-09-17</time>
+            <span class="t__in">2 días</span></div>
+          <div class="t__body">
+            <h3 class="t__title">La-n102-2026 Contratacion del Servicio de Dialisis Peritoneal Ambulatoria</h3>
+            <p class="t__meta"><span class="who">IMSS</span>
+              <span class="dot">·</span><span class="proc">Licitación pública</span></p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/42556189dfa0408088f471c83827a7d0/procedimiento" target="_blank" rel="noopener">LA-N102-2026 ↗</a>
+          </div>
+        </li>
+        <li class="t t--urgent">
+          <div class="t__when"><time datetime="2026-09-17">2026-09-17</time>
+            <span class="t__in">2 días</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Servicio Subrogado de Radioterapia 2026</h3>
+            <p class="t__meta"><span class="who">IMSS</span>
+              <span class="dot">·</span><span class="proc">Licitación pública</span></p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/17862c5abff24132a333f9e3274ca715/procedimiento" target="_blank" rel="noopener">SERVICIO SUBROGADO DE RADIOTERAPIA 2026 ↗</a>
+          </div>
+        </li>
+        </ul>
+      </section>
+      <section class="seg">
+        <h2 class="seg__h">Mantenimiento y conservación</h2>
+        <p class="seg__n">49 abiertas · 10 listadas</p>
+        <ul class="list">
+        <li class="t t--urgent">
+          <div class="t__when"><time datetime="2026-09-17">2026-09-17</time>
+            <span class="t__in">2 días</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Mantenimiento Correctivo a Equipos de Casa de Maquinas de la Umfrc</h3>
+            <p class="t__meta"><span class="who">IMSS</span>
+              <span class="dot">·</span><span class="proc">Invitación a 3</span></p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/7501a392fa2c48a7b55c9bf982ac1f82/procedimiento" target="_blank" rel="noopener">HTOLVDCSG26-034 ↗</a>
+          </div>
+        </li>
+        <li class="t t--urgent">
+          <div class="t__when"><time datetime="2026-09-17">2026-09-17</time>
+            <span class="t__in">2 días</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Mantenimiento Preventivo Y/o Correctivo a Incubadoras</h3>
+            <p class="t__meta"><span class="who">IMSS</span>
+              <span class="dot">·</span><span class="proc">Licitación pública</span></p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/e8ee0b6e72b64acd98c8ec0ce0068703/procedimiento" target="_blank" rel="noopener">LA-50-GYR-050GYR022-N-215-2026 ↗</a>
+          </div>
+        </li>
+        <li class="t t--urgent">
+          <div class="t__when"><time datetime="2026-09-17">2026-09-17</time>
+            <span class="t__in">2 días</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Mantenimiento Correctivo a Elementos de Acero de la Umae Htolv</h3>
+            <p class="t__meta"><span class="who">IMSS</span>
+              <span class="dot">·</span><span class="proc">Invitación a 3</span></p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/64b4bcab741b410993956fd33d846c8c/procedimiento" target="_blank" rel="noopener">HTOLVDCSG26-036 ↗</a>
+          </div>
+        </li>
+        <li class="t t--urgent">
+          <div class="t__when"><time datetime="2026-09-17">2026-09-17</time>
+            <span class="t__in">2 días</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Servicio de Mantenimiento de Cableado de Voz y Datos</h3>
+            <p class="t__meta"><span class="who">FIRA</span>
+              <span class="dot">·</span><span class="proc">Licitación pública</span></p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/eba0baa79953457c972717bc28b42bd5/procedimiento" target="_blank" rel="noopener">FIRA-6C.4/2026-68/SADQ ↗</a>
+          </div>
+        </li>
+        <li class="t t--urgent">
+          <div class="t__when"><time datetime="2026-09-17">2026-09-17</time>
+            <span class="t__in">2 días</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Mantenimiento Correctivo a Puertas de Quirofano de la Umae Htolv</h3>
+            <p class="t__meta"><span class="who">IMSS</span>
+              <span class="dot">·</span><span class="proc">Invitación a 3</span></p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/b5d860e92a904a689f624c374c91481c/procedimiento" target="_blank" rel="noopener">HTOLVDCSG26-039 ↗</a>
+          </div>
+        </li>
+        <li class="t t--urgent">
+          <div class="t__when"><time datetime="2026-09-17">2026-09-17</time>
+            <span class="t__in">2 días</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Servicio de los Trabajos de Conservación y Mantenimiento en Ayudas Visuales en E</h3>
+            <p class="t__meta"><span class="who">AICM</span>
+              <span class="dot">·</span><span class="proc">Licitación pública</span></p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/dbcd4b95b55f45328af13531eeedc512/procedimiento" target="_blank" rel="noopener">AICM-LPN-033-2026 ↗</a>
+          </div>
+        </li>
+        <li class="t t--urgent">
+          <div class="t__when"><time datetime="2026-09-17">2026-09-17</time>
+            <span class="t__in">2 días</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Suministro, Instalación y Mantenimiento de Alarmas de Emergencias</h3>
+            <p class="t__meta"><span class="who">ITSON</span>
+              <span class="dot">·</span><span class="proc">Licitación pública</span></p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/56032f429f82494f8b8e360ef7d51a84/procedimiento" target="_blank" rel="noopener">LA-85-W83-926014991-N-88-2026 ↗</a>
+          </div>
+        </li>
+        <li class="t t--urgent">
+          <div class="t__when"><time datetime="2026-09-17">2026-09-17</time>
+            <span class="t__in">2 días</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Invitacion a Cuando Menos Tres Personas</h3>
+            <p class="t__meta"><span class="who">IMSS</span>
+              <span class="dot">·</span><span class="proc">Invitación a 3</span></p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/38b5459b458047a8af24bdbdf5a1eed2/procedimiento" target="_blank" rel="noopener">IA-50-GYR-050GYR979-N-24-2026 ↗</a>
+          </div>
+        </li>
+        <li class="t t--urgent">
+          <div class="t__when"><time datetime="2026-09-17">2026-09-17</time>
+            <span class="t__in">2 días</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Servicio de Mantenimiento Total Preventivo y Correctivo a Sistema Incendios</h3>
+            <p class="t__meta"><span class="who">CENACE</span>
+              <span class="dot">·</span><span class="proc">Licitación pública</span></p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/48495b6a9010405489449c9c755236d4/procedimiento" target="_blank" rel="noopener">SERVICIO DE MANTENIMIENTO TOTAL PREVENTIVO Y CORRECTIVO A SISTEMA INCENDIOS ↗</a>
+          </div>
+        </li>
+        <li class="t t--urgent">
+          <div class="t__when"><time datetime="2026-09-17">2026-09-17</time>
+            <span class="t__in">2 días</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Mantenimiento a Equipos Electronicos, Electromecanicos y Maquinaria del Hgz 48</h3>
+            <p class="t__meta"><span class="who">IMSS</span>
+              <span class="dot">·</span><span class="proc">Invitación a 3</span></p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/e0db61ebfbd84d73bda8773417d3ffa1/procedimiento" target="_blank" rel="noopener">CSG-IA-50-GYR-050GYR016-N-166-2026 ↗</a>
+          </div>
+        </li>
+        </ul>
+      </section>
+      <section class="seg">
+        <h2 class="seg__h">Vestuario, uniformes y equipo de protección</h2>
+        <p class="seg__n">9 abiertas</p>
+        <ul class="list">
+        <li class="t t--urgent">
+          <div class="t__when"><time datetime="2026-09-17">2026-09-17</time>
+            <span class="t__in">2 días</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Adquisición de Vestuario, Uniformes, Calzado y Equipo de Protección</h3>
+            <p class="t__meta"><span class="who">TRENMAYA</span>
+              <span class="dot">·</span><span class="proc">Licitación pública</span></p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/3608e7b723e548baa61011a36acdc0c4/procedimiento" target="_blank" rel="noopener">TM/CGRH/DRH/GAP/6036/2026 ↗</a>
+          </div>
+        </li>
+        <li class="t t--urgent">
+          <div class="t__when"><time datetime="2026-09-17">2026-09-17</time>
+            <span class="t__in">2 días</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Adquisición de Vestuario y Uniformes 2026, para el Personal</h3>
+            <p class="t__meta"><span class="who">SSM</span>
+              <span class="dot">·</span><span class="proc">Licitación pública</span></p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/4e3454cedf604b838ef9c18480f052fe/procedimiento" target="_blank" rel="noopener">01/ADQ/2026 ↗</a>
+          </div>
+        </li>
+        <li class="t t--urgent">
+          <div class="t__when"><time datetime="2026-09-17">2026-09-17</time>
+            <span class="t__in">2 días</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Adquisicion de Blancos para los Centros Vacacionales Trinidad y Malintzi</h3>
+            <p class="t__meta"><span class="who">IMSS</span>
+              <span class="dot">·</span><span class="proc">Licitación pública</span></p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/0bbb5c5b73854f0086083b4266db1841/procedimiento" target="_blank" rel="noopener">LA-050-GYR-050GYR041-N-111-2026 ↗</a>
+          </div>
+        </li>
+        <li class="t t--urgent">
+          <div class="t__when"><time datetime="2026-09-18">2026-09-18</time>
+            <span class="t__in">3 días</span></div>
+          <div class="t__body">
+            <h3 class="t__title">La Adquisición de Uniformes para el Personal de la Asipona Tampico 2026</h3>
+            <p class="t__meta"><span class="who">ASIPONA-TAMPICO</span>
+              <span class="dot">·</span><span class="proc">Invitación a 3</span></p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/0f6db6d4b0c84aa4afe7cee7bed02beb/procedimiento" target="_blank" rel="noopener">REQUISICION 33512 ↗</a>
+          </div>
+        </li>
+        <li class="t t--soon">
+          <div class="t__when"><time datetime="2026-09-21">2026-09-21</time>
+            <span class="t__in">6 días</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Adquisición de Uniformes para los Empleados de las Diversas Áreas del Aifa</h3>
+            <p class="t__meta"><span class="who">AIFA</span>
+              <span class="dot">·</span><span class="proc">Licitación pública</span></p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/20d12d149d4d4aaca6a58eb50f931fb1/procedimiento" target="_blank" rel="noopener">AIFA-LPN-SRH-ADQ-167/2026. ↗</a>
+          </div>
+        </li>
+        <li class="t t--soon">
+          <div class="t__when"><time datetime="2026-09-22">2026-09-22</time>
+            <span class="t__in">7 días</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Adquisición de Mascarilla de Protección para Personal Combatiente de Incendios</h3>
+            <p class="t__meta"><span class="who">CONAFOR</span>
+              <span class="dot">·</span><span class="proc">Licitación pública</span></p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/421c335f2731413c83466b771991a167/procedimiento" target="_blank" rel="noopener">2026000793 ↗</a>
+          </div>
+        </li>
+        <li class="t t--normal">
+          <div class="t__when"><time datetime="2026-09-23">2026-09-23</time>
+            <span class="t__in">8 días</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Confección de Uniformes Secretariales</h3>
+            <p class="t__meta"><span class="who">UANL</span>
+              <span class="dot">·</span><span class="proc">Licitación pública</span><span class="dot">·</span>junta 2026-09-17</p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/4355124287b64bc38c127e25c46f90ad/procedimiento" target="_blank" rel="noopener">UANL-DGA-DA-024/09/2026 ↗</a>
+          </div>
+        </li>
+        <li class="t t--normal">
+          <div class="t__when"><time datetime="2026-09-23">2026-09-23</time>
+            <span class="t__in">8 días</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Prendas de Protección para Seguridad Pública</h3>
+            <p class="t__meta"><span class="who">075T35</span>
+              <span class="dot">·</span><span class="proc">Invitación a 3</span><span class="dot">·</span>junta 2026-09-15</p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/6d406b8032ee42629e260ca8e6b1b604/procedimiento" target="_blank" rel="noopener">CADPE-EM-INE-002/2026 Y/O IA-75-T35-916039984-N-4-2026 ↗</a>
+          </div>
+        </li>
+        <li class="t t--normal">
+          <div class="t__when"><time datetime="2026-09-24">2026-09-24</time>
+            <span class="t__in">9 días</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Adquisición de Uniformes, Insignias y Calzado</h3>
+            <p class="t__meta"><span class="who">AGS</span>
+              <span class="dot">·</span><span class="proc">Licitación pública</span></p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/7772dcaa3b2f4fe39e141c0a3b27a3de/procedimiento" target="_blank" rel="noopener">DGAD-LPIE-001-2026 ↗</a>
+          </div>
+        </li>
+        </ul>
+      </section>
+      <section class="seg">
+        <h2 class="seg__h">Tecnología: cómputo, software y telecomunicaciones</h2>
+        <p class="seg__n">16 abiertas · 10 listadas</p>
+        <ul class="list">
+        <li class="t t--urgent">
+          <div class="t__when"><time datetime="2026-09-17">2026-09-17</time>
+            <span class="t__in">2 días</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Adquisición de Equipo de Cómputo y Renovación de Licencias.</h3>
+            <p class="t__meta"><span class="who">SECRETARÍA DE ADMINISTRACIÓN (NL)</span>
+              <span class="dot">·</span><span class="proc">Invitación a 3</span></p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/27b3b5a7797b42599fe49409d05ca93b/procedimiento" target="_blank" rel="noopener">DGAS-DC-CXIA3-01-2026 ↗</a>
+          </div>
+        </li>
+        <li class="t t--urgent">
+          <div class="t__when"><time datetime="2026-09-17">2026-09-17</time>
+            <span class="t__in">2 días</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Materiales Diversos,refacciones de Computo, Pasaje y Viáticos</h3>
+            <p class="t__meta"><span class="who">CECYTEY</span>
+              <span class="dot">·</span><span class="proc">Licitación pública</span></p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/f0b831ac11624ec78e6af105ceca1f5e/procedimiento" target="_blank" rel="noopener">LA-90-002-931068953-N-4-2026 ↗</a>
+          </div>
+        </li>
+        <li class="t t--urgent">
+          <div class="t__when"><time datetime="2026-09-17">2026-09-17</time>
+            <span class="t__in">2 días</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Servicio de Actualización y Soporte de Licenciamiento de Software</h3>
+            <p class="t__meta"><span class="who">UANL</span>
+              <span class="dot">·</span><span class="proc">Licitación pública</span></p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/7aa0f248f5db4c8bbe86677f6b9da5e7/procedimiento" target="_blank" rel="noopener">UANL-DGA-DA-022/08/2026 ↗</a>
+          </div>
+        </li>
+        <li class="t t--urgent">
+          <div class="t__when"><time datetime="2026-09-17">2026-09-17</time>
+            <span class="t__in">2 días</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Licencias de Software</h3>
+            <p class="t__meta"><span class="who">SAPUEBLA</span>
+              <span class="dot">·</span><span class="proc">Invitación a 3</span></p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/cd4fe2d944ff4bfabf448afc984be422/procedimiento" target="_blank" rel="noopener">GEP-SPFA-ITPF-012-393/2026 ↗</a>
+          </div>
+        </li>
+        <li class="t t--urgent">
+          <div class="t__when"><time datetime="2026-09-17">2026-09-17</time>
+            <span class="t__in">2 días</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Renta de Licenciamiento Adobe Etla para la Uanl</h3>
+            <p class="t__meta"><span class="who">UANL</span>
+              <span class="dot">·</span><span class="proc">Licitación pública</span></p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/0930a391d0fc4154946271f2d0f5d478/procedimiento" target="_blank" rel="noopener">UANL-DGA-DA-023/09/2026 ↗</a>
+          </div>
+        </li>
+        <li class="t t--urgent">
+          <div class="t__when"><time datetime="2026-09-17">2026-09-17</time>
+            <span class="t__in">2 días</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Servicios Tecnológicos de Geolocalización y Soporte en Ciberseguridad</h3>
+            <p class="t__meta"><span class="who">085X02</span>
+              <span class="dot">·</span><span class="proc">Licitación pública</span></p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/a24daa560def4a0db2ffcc4fca203629/procedimiento" target="_blank" rel="noopener">LA-85-X02-926001991-N-6-2026 ↗</a>
+          </div>
+        </li>
+        <li class="t t--urgent">
+          <div class="t__when"><time datetime="2026-09-18">2026-09-18</time>
+            <span class="t__in">3 días</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Adquisición de Equipos de Computo (segunda Vuelta)</h3>
+            <p class="t__meta"><span class="who">SECADMONZAC</span>
+              <span class="dot">·</span><span class="proc">Invitación a 3</span><span class="dot">·</span>junta 2026-09-15</p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/08d4ffbf58094b3fb1b5041bf86e75f0/procedimiento" target="_blank" rel="noopener">IA-91-Z69-932079957-N-20-2026 ↗</a>
+          </div>
+        </li>
+        <li class="t t--soon">
+          <div class="t__when"><time datetime="2026-09-21">2026-09-21</time>
+            <span class="t__in">6 días</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Ras Licenciamiento Adobe Acrobat Pro en Español y Adobe Creative Cloud Pro</h3>
+            <p class="t__meta"><span class="who">PRODECON</span>
+              <span class="dot">·</span><span class="proc">Invitación a 3</span></p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/503ca3fefca74c51912a21015eac3476/procedimiento" target="_blank" rel="noopener">PDC-SG-042/2026 ↗</a>
+          </div>
+        </li>
+        <li class="t t--soon">
+          <div class="t__when"><time datetime="2026-09-21">2026-09-21</time>
+            <span class="t__in">6 días</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Licenciamiento de Software para la Automatización de Reportes Regulatorios</h3>
+            <p class="t__meta"><span class="who">BANJERCITO</span>
+              <span class="dot">·</span><span class="proc">Licitación pública</span></p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/2f7e9640fa194c198582bcf6bc9436f5/procedimiento" target="_blank" rel="noopener">LA-06-G1H-006G1H001-N-51-2026 ↗</a>
+          </div>
+        </li>
+        <li class="t t--soon">
+          <div class="t__when"><time datetime="2026-09-21">2026-09-21</time>
+            <span class="t__in">6 días</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Adquisición de Cartuchos de Toners para el Ejercicio 2026, para el Órgano de Ope</h3>
+            <p class="t__meta"><span class="who">IMSS</span>
+              <span class="dot">·</span><span class="proc">Licitación pública</span></p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/ca0e6c86dfae490796d5d84e9253d956/procedimiento" target="_blank" rel="noopener">ADQUISICIÓN DE CARTUCHOS DE TONERS PARA EL EJERCICIO 2026 ↗</a>
+          </div>
+        </li>
+        </ul>
+      </section>
+      <section class="seg">
+        <h2 class="seg__h">Servicios generales y de apoyo</h2>
+        <p class="seg__n">16 abiertas · 10 listadas</p>
+        <ul class="list">
+        <li class="t t--urgent">
+          <div class="t__when"><time datetime="2026-09-17">2026-09-17</time>
+            <span class="t__in">2 días</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Servicio de Recoleccion de Rsu y Rme para la Umae Htolv y Umfrc</h3>
+            <p class="t__meta"><span class="who">IMSS</span>
+              <span class="dot">·</span><span class="proc">Invitación a 3</span></p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/86ad38ec33f442c78398ce79a290fb05/procedimiento" target="_blank" rel="noopener">HTOLVDCSG26-037 ↗</a>
+          </div>
+        </li>
+        <li class="t t--urgent">
+          <div class="t__when"><time datetime="2026-09-17">2026-09-17</time>
+            <span class="t__in">2 días</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Servicio de Recoleccion de Rpbi para la Umae Htolv y Umfrc</h3>
+            <p class="t__meta"><span class="who">IMSS</span>
+              <span class="dot">·</span><span class="proc">Invitación a 3</span></p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/69796e75f8fd4725adc2478597342e6f/procedimiento" target="_blank" rel="noopener">HTOLVDCSG26-038 ↗</a>
+          </div>
+        </li>
+        <li class="t t--urgent">
+          <div class="t__when"><time datetime="2026-09-17">2026-09-17</time>
+            <span class="t__in">2 días</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Servicio Integral de Logistica, Alimentación y Suministro de Insumos</h3>
+            <p class="t__meta"><span class="who">ICATCAM</span>
+              <span class="dot">·</span><span class="proc">Invitación a 3</span></p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/ce4d8eefb1e9454c8effe06e690a024f/procedimiento" target="_blank" rel="noopener">IA-904030976-E4-2026 ↗</a>
+          </div>
+        </li>
+        <li class="t t--urgent">
+          <div class="t__when"><time datetime="2026-09-17">2026-09-17</time>
+            <span class="t__in">2 días</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Contratación del Serv. de Capacitación Riesgos Pld y Ft.</h3>
+            <p class="t__meta"><span class="who">BANJERCITO</span>
+              <span class="dot">·</span><span class="proc">Licitación pública</span></p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/4b6f0e304ceb4245aac0e4abf53827c3/procedimiento" target="_blank" rel="noopener">DABS-SRM-GA-DL-50-2026 ↗</a>
+          </div>
+        </li>
+        <li class="t t--soon">
+          <div class="t__when"><time datetime="2026-09-21">2026-09-21</time>
+            <span class="t__in">6 días</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Recolección, Transporte Externo, Acopio, Tratamiento y Disposición Final de Resi</h3>
+            <p class="t__meta"><span class="who">IMSS</span>
+              <span class="dot">·</span><span class="proc">Invitación a 3</span></p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/f72df1b56a9a470c9eb749e45aaf3987/procedimiento" target="_blank" rel="noopener">RECOLECCIÓN, TRANSPORTE EXTERNO, ACOPIO, TRATAMIENTO Y DISPOSICIÓN FINAL DE RESI ↗</a>
+          </div>
+        </li>
+        <li class="t t--soon">
+          <div class="t__when"><time datetime="2026-09-21">2026-09-21</time>
+            <span class="t__in">6 días</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Servicio de Consultoría para Diseñar Una Metodología Que Proporcione Recursos</h3>
+            <p class="t__meta"><span class="who">CONAFOR</span>
+              <span class="dot">·</span><span class="proc">Invitación a 3</span><span class="dot">·</span>junta 2026-09-15</p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/bb7bedff42664867bb05beeaf63d59b8/procedimiento" target="_blank" rel="noopener">2026000835 ↗</a>
+          </div>
+        </li>
+        <li class="t t--soon">
+          <div class="t__when"><time datetime="2026-09-22">2026-09-22</time>
+            <span class="t__in">7 días</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Servicio de Recolección, Transporte Externo, Acopio de Rpbi</h3>
+            <p class="t__meta"><span class="who">IMSS</span>
+              <span class="dot">·</span><span class="proc">Invitación a 3</span></p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/d33f705ec96e42a4ba4c92084ffd5dad/procedimiento" target="_blank" rel="noopener">CSG-IA-50-GYR-050GYR016-N-180-2026 ↗</a>
+          </div>
+        </li>
+        <li class="t t--normal">
+          <div class="t__when"><time datetime="2026-09-23">2026-09-23</time>
+            <span class="t__in">8 días</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Servicio de Capacitación</h3>
+            <p class="t__meta"><span class="who">ISSFAM</span>
+              <span class="dot">·</span><span class="proc">Licitación pública</span><span class="dot">·</span>junta 2026-09-15</p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/5b06ae6ca79c48c38da0b4f309608aa0/procedimiento" target="_blank" rel="noopener">PC-CS-036-26 ↗</a>
+          </div>
+        </li>
+        <li class="t t--normal">
+          <div class="t__when"><time datetime="2026-09-23">2026-09-23</time>
+            <span class="t__in">8 días</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Contratación del Servicio de Impresiones y Publicaciones Oficiales 2026</h3>
+            <p class="t__meta"><span class="who">ICATSON</span>
+              <span class="dot">·</span><span class="proc">Invitación a 3</span><span class="dot">·</span>junta 2026-09-17</p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/e891ab53e31040e09a1d86a9e01be76f/procedimiento" target="_blank" rel="noopener">IA-85-X17-926027964-N-9-2026 ↗</a>
+          </div>
+        </li>
+        <li class="t t--normal">
+          <div class="t__when"><time datetime="2026-09-24">2026-09-24</time>
+            <span class="t__in">9 días</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Servicio de Recolección, Transporte Externo y Disposición Final de Rsu y Rme</h3>
+            <p class="t__meta"><span class="who">IMSS</span>
+              <span class="dot">·</span><span class="proc">Licitación pública</span><span class="dot">·</span>junta 2026-09-17</p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/1627f061220046d686a2219ecc1218cf/procedimiento" target="_blank" rel="noopener">SERVICIO DE RECOLECCIÓN, TRANSPORTE EXTERNO Y DISPOSICIÓN FINAL DE RSU Y RME ↗</a>
+          </div>
+        </li>
+        </ul>
+      </section>
+      <section class="seg">
+        <h2 class="seg__h">Otros bienes y arrendamientos</h2>
+        <p class="seg__n">96 abiertas · 10 listadas</p>
+        <ul class="list">
+        <li class="t t--urgent">
+          <div class="t__when"><time datetime="2026-09-17">2026-09-17</time>
+            <span class="t__in">2 días</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Adquisición Consolidada de Papel Bond</h3>
+            <p class="t__meta"><span class="who">IMSS</span>
+              <span class="dot">·</span><span class="proc">Invitación a 3</span></p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/62695ebabb1d49ebbc47c43e8eda02ce/procedimiento" target="_blank" rel="noopener">IA-50-GYR-050GYR001-N-90-2026 ↗</a>
+          </div>
+        </li>
+        <li class="t t--urgent">
+          <div class="t__when"><time datetime="2026-09-17">2026-09-17</time>
+            <span class="t__in">2 días</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Para la Adquisición de Grupo 311 y 312, Articulos y Utiles de Oficina</h3>
+            <p class="t__meta"><span class="who">IMSS</span>
+              <span class="dot">·</span><span class="proc">Invitación a 3</span></p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/9c85a12ba329414aaa19913fdc3f9f89/procedimiento" target="_blank" rel="noopener">LA-50-GYR-050GYR012-T-128-2026 ↗</a>
+          </div>
+        </li>
+        <li class="t t--urgent">
+          <div class="t__when"><time datetime="2026-09-17">2026-09-17</time>
+            <span class="t__in">2 días</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Dispositivo Rastreo Satelital Plataforma de Monitoreo/plataforma y Linea Undeman</h3>
+            <p class="t__meta"><span class="who">SEDENA</span>
+              <span class="dot">·</span><span class="proc">Invitación a 3</span></p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/0b2e9a95018c4a4282a0c5250ead0de9/procedimiento" target="_blank" rel="noopener">IA-007000999-SAIT-189-2026 ↗</a>
+          </div>
+        </li>
+        <li class="t t--urgent">
+          <div class="t__when"><time datetime="2026-09-17">2026-09-17</time>
+            <span class="t__in">2 días</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Grupo 210 Ropa Contractual, Zona a y Zona B, Régimen Ordinario</h3>
+            <p class="t__meta"><span class="who">IMSS</span>
+              <span class="dot">·</span><span class="proc">Licitación pública</span></p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/9b7b537da5f74a0785dd225348704fee/procedimiento" target="_blank" rel="noopener">LA-50-GYR-050GYR120-N-19-2026 ↗</a>
+          </div>
+        </li>
+        <li class="t t--urgent">
+          <div class="t__when"><time datetime="2026-09-17">2026-09-17</time>
+            <span class="t__in">2 días</span></div>
+          <div class="t__body">
+            <h3 class="t__title">La-n-180-2026 Adq. de Bienes de Artículos y Químicos de Aseo, Ejerc. 2026</h3>
+            <p class="t__meta"><span class="who">IMSS</span>
+              <span class="dot">·</span><span class="proc">Licitación pública</span></p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/db2fcbe8a0434c57a3da2ffe2f932115/procedimiento" target="_blank" rel="noopener">LA-50-GYR-050GYR018-N-180-2026 ↗</a>
+          </div>
+        </li>
+        <li class="t t--urgent">
+          <div class="t__when"><time datetime="2026-09-17">2026-09-17</time>
+            <span class="t__in">2 días</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Partida Única. Adquisición de Fluxómetros, para las Diversas Unidades</h3>
+            <p class="t__meta"><span class="who">IMSS</span>
+              <span class="dot">·</span><span class="proc">Invitación a 3</span></p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/3d182ba534144a08ad530292f41faabb/procedimiento" target="_blank" rel="noopener">CSG-IA-50-GYR-050GYR016-N-177-2026 ↗</a>
+          </div>
+        </li>
+        <li class="t t--urgent">
+          <div class="t__when"><time datetime="2026-09-17">2026-09-17</time>
+            <span class="t__in">2 días</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Adquisición de Ventiladores, Enfriadores y Calentadores de Agua, Trituradoras y</h3>
+            <p class="t__meta"><span class="who">INEGI</span>
+              <span class="dot">·</span><span class="proc">Licitación pública</span></p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/cb865f1151b04a199f3224ed929231b0/procedimiento" target="_blank" rel="noopener">LA-40-100-040100992-T-17-2026 ↗</a>
+          </div>
+        </li>
+        <li class="t t--urgent">
+          <div class="t__when"><time datetime="2026-09-17">2026-09-17</time>
+            <span class="t__in">2 días</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Adquisición de Tecnologías de la Información y Equipamiento Especializado</h3>
+            <p class="t__meta"><span class="who">085X02</span>
+              <span class="dot">·</span><span class="proc">Licitación pública</span></p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/df01d71b130d434aa42ae1f869fe2b7d/procedimiento" target="_blank" rel="noopener">LA-85-X02-926001991-N-4-2026 ↗</a>
+          </div>
+        </li>
+        <li class="t t--urgent">
+          <div class="t__when"><time datetime="2026-09-17">2026-09-17</time>
+            <span class="t__in">2 días</span></div>
+          <div class="t__body">
+            <h3 class="t__title">&quot;refacciones&quot;</h3>
+            <p class="t__meta"><span class="who">UAEMEX</span>
+              <span class="dot">·</span><span class="proc">Invitación a 3</span></p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/5c12b557f40a4524b51ffba7713a84ce/procedimiento" target="_blank" rel="noopener">IC3P-002-2026 ↗</a>
+          </div>
+        </li>
+        <li class="t t--urgent">
+          <div class="t__when"><time datetime="2026-09-17">2026-09-17</time>
+            <span class="t__in">2 días</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Adq de Dvd, Cd, Memorias Usb, Discos Duros y Materiales y Bienes Informáticos 2</h3>
+            <p class="t__meta"><span class="who">FGR</span>
+              <span class="dot">·</span><span class="proc">Licitación pública</span></p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/43a454e286174066a8c6bd1f42f0ca66/procedimiento" target="_blank" rel="noopener">E-2026-00095619 ↗</a>
+          </div>
+        </li>
+        </ul>
+      </section>
+      <section class="seg">
+        <h2 class="seg__h">Otros servicios</h2>
+        <p class="seg__n">50 abiertas · 10 listadas</p>
+        <ul class="list">
+        <li class="t t--urgent">
+          <div class="t__when"><time datetime="2026-09-17">2026-09-17</time>
+            <span class="t__in">2 días</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Adquisición Y/o Suministro de Insumos para el Servicio de Hemodinamia, 2026</h3>
+            <p class="t__meta"><span class="who">IMSS</span>
+              <span class="dot">·</span><span class="proc">Licitación pública</span></p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/bc69dce1a9484407a1a8c0e4d5b87bff/procedimiento" target="_blank" rel="noopener">08A612500/1356/2026 ↗</a>
+          </div>
+        </li>
+        <li class="t t--urgent">
+          <div class="t__when"><time datetime="2026-09-17">2026-09-17</time>
+            <span class="t__in">2 días</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Servicios de Gestión de la Gobernanza de la Seguridad de la Información para la</h3>
+            <p class="t__meta"><span class="who">BANJERCITO</span>
+              <span class="dot">·</span><span class="proc">Licitación pública</span></p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/8277ad598b9b4ffab54b4d7352beabb1/procedimiento" target="_blank" rel="noopener">LA-06-G1H-006G1H001-N-XX-2026 ↗</a>
+          </div>
+        </li>
+        <li class="t t--urgent">
+          <div class="t__when"><time datetime="2026-09-17">2026-09-17</time>
+            <span class="t__in">2 días</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Servicio de Suministro E Instalación de Banco Capacitores para el Velatorio 22</h3>
+            <p class="t__meta"><span class="who">IMSS</span>
+              <span class="dot">·</span><span class="proc">Licitación pública</span></p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/38a1f50401da4d1cb460719e7f9496ce/procedimiento" target="_blank" rel="noopener">SERVICIO DE SUMINISTRO E INSTALACIÓN DE BANCO CAPACITORES PARA EL VELATORIO 22 ↗</a>
+          </div>
+        </li>
+        <li class="t t--urgent">
+          <div class="t__when"><time datetime="2026-09-17">2026-09-17</time>
+            <span class="t__in">2 días</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Servicio Integral para los Servicios Compartidos</h3>
+            <p class="t__meta"><span class="who">AIFA</span>
+              <span class="dot">·</span><span class="proc">Licitación pública</span></p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/f7cf33c1cb92400299ab0f52fea0287f/procedimiento" target="_blank" rel="noopener">AIFA-LPN-TICS-SVS-165/2026 ↗</a>
+          </div>
+        </li>
+        <li class="t t--urgent">
+          <div class="t__when"><time datetime="2026-09-17">2026-09-17</time>
+            <span class="t__in">2 días</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Servicio de Anteojos y Lentes de Contacto para Trabajadores</h3>
+            <p class="t__meta"><span class="who">IMSS</span>
+              <span class="dot">·</span><span class="proc">Invitación a 3</span></p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/3e2c81bcacfe42e7babde522b9c809dd/procedimiento" target="_blank" rel="noopener">IMSS-IM059-2026 ↗</a>
+          </div>
+        </li>
+        <li class="t t--urgent">
+          <div class="t__when"><time datetime="2026-09-17">2026-09-17</time>
+            <span class="t__in">2 días</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Ia-n-188-226 Servicio de Mastografias y Ultrasonido Mamario Unidad Movil</h3>
+            <p class="t__meta"><span class="who">IMSS</span>
+              <span class="dot">·</span><span class="proc">Invitación a 3</span></p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/42642bebabc84b2099f9583be68b55ad/procedimiento" target="_blank" rel="noopener">IA-50-GYR-050GYR018-N-188-2026 ↗</a>
+          </div>
+        </li>
+        <li class="t t--urgent">
+          <div class="t__when"><time datetime="2026-09-17">2026-09-17</time>
+            <span class="t__in">2 días</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Estrategia de Apicultura Sostenible Como Alternativa de Reconversión Productiva</h3>
+            <p class="t__meta"><span class="who">INECC</span>
+              <span class="dot">·</span><span class="proc">Invitación a 3</span></p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/93beba6e720f410da1ab7567cda76560/procedimiento" target="_blank" rel="noopener">INECC/I3P-029/2026 ↗</a>
+          </div>
+        </li>
+        <li class="t t--urgent">
+          <div class="t__when"><time datetime="2026-09-17">2026-09-17</time>
+            <span class="t__in">2 días</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Servicio de Soporte Técnico para el Aplicativo Agech</h3>
+            <p class="t__meta"><span class="who">IMSS</span>
+              <span class="dot">·</span><span class="proc">Licitación pública</span></p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/86d83c2d3f00499aba55c0c52005a7e1/procedimiento" target="_blank" rel="noopener">SERVICIO DE SOPORTE TÉCNICO PARA EL APLICATIVO AGECH ↗</a>
+          </div>
+        </li>
+        <li class="t t--urgent">
+          <div class="t__when"><time datetime="2026-09-17">2026-09-17</time>
+            <span class="t__in">2 días</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Contratación de Instalación y Suministro de Fibra</h3>
+            <p class="t__meta"><span class="who">ASIPONA-MAZATLÁN</span>
+              <span class="dot">·</span><span class="proc">Licitación pública</span></p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/b27a23e1404445d280a9e7af4c17d4c3/procedimiento" target="_blank" rel="noopener">ASIPONAMAZ-AAS-LPN-09-2026 ↗</a>
+          </div>
+        </li>
+        <li class="t t--urgent">
+          <div class="t__when"><time datetime="2026-09-17">2026-09-17</time>
+            <span class="t__in">2 días</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Servicios de Una Agencia Digital para Performance Cpa</h3>
+            <p class="t__meta"><span class="who">NAFIN</span>
+              <span class="dot">·</span><span class="proc">Licitación pública</span></p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/cda3a44a0e9f4a91ba94636fc2ce047b/procedimiento" target="_blank" rel="noopener">SERVICIOS DE UNA AGENCIA DIGITAL PARA PERFORMANCE CPA ↗</a>
+          </div>
+        </li>
+        </ul>
+      </section>
+      <section class="seg">
+        <h2 class="seg__h">Agua y saneamiento</h2>
+        <p class="seg__n">18 abiertas · 10 listadas</p>
+        <ul class="list">
         <li class="t t--urgent">
           <div class="t__when"><time datetime="2026-09-17">2026-09-17</time>
             <span class="t__in">2 días</span></div>
@@ -307,50 +1040,140 @@ h1{
             <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/351073f44bfc48f986317b87e8f2e873/procedimiento" target="_blank" rel="noopener">LO-67-018-908040997-N-11- 2026 ↗</a>
           </div>
         </li>
+        <li class="t t--urgent">
+          <div class="t__when"><time datetime="2026-09-17">2026-09-17</time>
+            <span class="t__in">2 días</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Rehabilitación Planta de Tratamiento de Aguas Residuales &quot;miramar, Guerrero</h3>
+            <p class="t__meta"><span class="who">CONAGUA</span>
+              <span class="dot">·</span><span class="proc">Licitación pública</span></p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/b74bf744bcb84bc7a8f5fa8025312794/procedimiento" target="_blank" rel="noopener">CNA-GRM-OP-125-2026 ↗</a>
+          </div>
+        </li>
+        <li class="t t--urgent">
+          <div class="t__when"><time datetime="2026-09-18">2026-09-18</time>
+            <span class="t__in">3 días</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Rehabilitación de Red Integral de Alcantarillado Sanitario de la Localidad de Ah</h3>
+            <p class="t__meta"><span class="who">084H39</span>
+              <span class="dot">·</span><span class="proc">Licitación pública</span></p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/ef12d1810fad4d2797a90d5d048d88b9/procedimiento" target="_blank" rel="noopener">JAP-PEAS-ALC-CPN-26-32 ↗</a>
+          </div>
+        </li>
+        <li class="t t--urgent">
+          <div class="t__when"><time datetime="2026-09-18">2026-09-18</time>
+            <span class="t__in">3 días</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Supervisión Planta de Tratamiento de Aguas &quot;miramar&quot; en Acapulco, Guerrero</h3>
+            <p class="t__meta"><span class="who">CONAGUA</span>
+              <span class="dot">·</span><span class="proc">Invitación a 3</span></p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/5443375ae21d4700a857ec09ad6069fd/procedimiento" target="_blank" rel="noopener">CNA-GRM-OP-134-2026 ↗</a>
+          </div>
+        </li>
+        <li class="t t--soon">
+          <div class="t__when"><time datetime="2026-09-21">2026-09-21</time>
+            <span class="t__in">6 días</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Sistema de Agua Santa Elena en el Municipio de Tanlajás, S.l.p. (2A Etapa)</h3>
+            <p class="t__meta"><span class="who">083G80</span>
+              <span class="dot">·</span><span class="proc">Licitación pública</span><span class="dot">·</span>junta 2026-09-15</p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/49d325d3a3e84e128327e9d737f06ec2/procedimiento" target="_blank" rel="noopener">LO-83-G80-824041964-N-1-2026 ↗</a>
+          </div>
+        </li>
+        <li class="t t--normal">
+          <div class="t__when"><time datetime="2026-09-23">2026-09-23</time>
+            <span class="t__in">8 días</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Red de Agua Potable de la Quintera Al Zapote, Álamos.</h3>
+            <p class="t__meta"><span class="who">085I29</span>
+              <span class="dot">·</span><span class="proc">Licitación pública</span><span class="dot">·</span>junta 2026-09-17</p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/91fbb5e4c76d4a4e91ad5ef8962a7a6d/procedimiento" target="_blank" rel="noopener">DIDUR-2603-2026-038 ↗</a>
+          </div>
+        </li>
+        <li class="t t--normal">
+          <div class="t__when"><time datetime="2026-09-23">2026-09-23</time>
+            <span class="t__in">8 días</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Nueva Captacion Captacion</h3>
+            <p class="t__meta"><span class="who">CUNCUNUL</span>
+              <span class="dot">·</span><span class="proc">Invitación a 3</span><span class="dot">·</span>junta 2026-09-15</p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/e59dcc4eb662406a84c8f0c0f5839f58/procedimiento" target="_blank" rel="noopener">CUNCUNUL-01 ↗</a>
+          </div>
+        </li>
+        <li class="t t--normal">
+          <div class="t__when"><time datetime="2026-09-23">2026-09-23</time>
+            <span class="t__in">8 días</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Construcción de la Red de Drenaje Sanitario en la Colonia Nueva Aurora Popular</h3>
+            <p class="t__meta"><span class="who">SOAPAP</span>
+              <span class="dot">·</span><span class="proc">Licitación pública</span><span class="dot">·</span>junta 2026-09-17</p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/db11c0a17dcc4336ad7f413c0402ce7a/procedimiento" target="_blank" rel="noopener">SOAPAP-GAF-DAA-6C.3.1-2026-006 ↗</a>
+          </div>
+        </li>
+        <li class="t t--normal">
+          <div class="t__when"><time datetime="2026-09-23">2026-09-23</time>
+            <span class="t__in">8 días</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Construcción del Colector Sanitario en la Colonia Valle del Paraíso</h3>
+            <p class="t__meta"><span class="who">SOAPAP</span>
+              <span class="dot">·</span><span class="proc">Licitación pública</span><span class="dot">·</span>junta 2026-09-17</p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/a0056112bc354f3db489dbf19d285c27/procedimiento" target="_blank" rel="noopener">SOAPAP-GAF-DAA-6C.3.1-2026-004 ↗</a>
+          </div>
+        </li>
+        <li class="t t--normal">
+          <div class="t__when"><time datetime="2026-09-23">2026-09-23</time>
+            <span class="t__in">8 días</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Construcción del Colector Sanitario Colonias de San Juan Bosco y Bosque de la Ca</h3>
+            <p class="t__meta"><span class="who">SOAPAP</span>
+              <span class="dot">·</span><span class="proc">Licitación pública</span><span class="dot">·</span>junta 2026-09-17</p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/89f8bbfe46544154affce95a72b3bf3a/procedimiento" target="_blank" rel="noopener">SOAPAP-GAF-DAA-6C.3.1-2026-005 ↗</a>
+          </div>
+        </li>
         </ul>
       </section>
       <section class="seg">
-        <h2 class="seg__h">Caminos y pavimentación</h2>
-        <p class="seg__n">14 convocatorias abiertas</p>
+        <h2 class="seg__h">Caminos y carreteras</h2>
+        <p class="seg__n">53 abiertas · 10 listadas</p>
         <ul class="list">
         <li class="t t--urgent">
-          <div class="t__when"><time datetime="2026-09-15">2026-09-15</time>
-            <span class="t__in">hoy</span></div>
+          <div class="t__when"><time datetime="2026-09-17">2026-09-17</time>
+            <span class="t__in">2 días</span></div>
           <div class="t__body">
-            <h3 class="t__title">Reconstrucción del Puente &quot;xuchipantla&quot;</h3>
-            <p class="t__meta"><span class="who">SICT</span>
-              <span class="dot">·</span><span class="proc">Licitación pública</span></p>
-            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/5efebe6818ec4f069ce43ca3b8f6a732/procedimiento" target="_blank" rel="noopener">LO-09-210-009000999-N-925-2026 ↗</a>
-          </div>
-        </li>
-        <li class="t t--urgent">
-          <div class="t__when"><time datetime="2026-09-15">2026-09-15</time>
-            <span class="t__in">hoy</span></div>
-          <div class="t__body">
-            <h3 class="t__title">Pavimentación, Guarniciones y Banquetas de Concreto Hidráulico en la Calle Priva</h3>
-            <p class="t__meta"><span class="who">091N40</span>
+            <h3 class="t__title">Rehabilitación de Pavimentación</h3>
+            <p class="t__meta"><span class="who">SOP</span>
               <span class="dot">·</span><span class="proc">Invitación a 3</span></p>
-            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/7d6ec1f417ff4ffc9648be1c862e2dc1/procedimiento" target="_blank" rel="noopener">MF OP IR OF RVUPE-01-26 ↗</a>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/c2ebb658bdb845259b0e6f347798c46a/procedimiento" target="_blank" rel="noopener">IO-87-Y03-928010997-N-91-2026 ↗</a>
           </div>
         </li>
         <li class="t t--urgent">
-          <div class="t__when"><time datetime="2026-09-15">2026-09-15</time>
-            <span class="t__in">hoy</span></div>
+          <div class="t__when"><time datetime="2026-09-17">2026-09-17</time>
+            <span class="t__in">2 días</span></div>
           <div class="t__body">
-            <h3 class="t__title">Pavimentacion Calle Enrique Cardenas Gonzalez</h3>
-            <p class="t__meta"><span class="who">087I84</span>
+            <h3 class="t__title">Io-89-y24-930007995-n-47-2026</h3>
+            <p class="t__meta"><span class="who">SIOPVER</span>
               <span class="dot">·</span><span class="proc">Invitación a 3</span></p>
-            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/5c7a1f86c3ae4e6d97f6300f7b8879f7/procedimiento" target="_blank" rel="noopener">COP/IR-053/2026 ↗</a>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/a605dc8c94f04b7a9d1daa23edf3ac0e/procedimiento" target="_blank" rel="noopener">IO-89-Y24-930007995-N-47-2026 ↗</a>
           </div>
         </li>
         <li class="t t--urgent">
-          <div class="t__when"><time datetime="2026-09-15">2026-09-15</time>
-            <span class="t__in">hoy</span></div>
+          <div class="t__when"><time datetime="2026-09-17">2026-09-17</time>
+            <span class="t__in">2 días</span></div>
           <div class="t__body">
-            <h3 class="t__title">Construcción del Puente &quot;las Pilas&quot;</h3>
-            <p class="t__meta"><span class="who">SICT</span>
-              <span class="dot">·</span><span class="proc">Licitación pública</span></p>
-            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/81bdd6d0fcaf4b698a36fda5f4959320/procedimiento" target="_blank" rel="noopener">LO-09-210-009000999-N-924-2026 ↗</a>
+            <h3 class="t__title">302construcción de Pavimentación con Concreto Hidráulico, Guarniciones y Banquet</h3>
+            <p class="t__meta"><span class="who">089L64</span>
+              <span class="dot">·</span><span class="proc">Invitación a 3</span></p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/5065f21c09c3487c991b7a1cbb29e1f7/procedimiento" target="_blank" rel="noopener">2026301890302 ↗</a>
+          </div>
+        </li>
+        <li class="t t--urgent">
+          <div class="t__when"><time datetime="2026-09-17">2026-09-17</time>
+            <span class="t__in">2 días</span></div>
+          <div class="t__body">
+            <h3 class="t__title">401construcción de Pavimentación con Concreto Hidráulico</h3>
+            <p class="t__meta"><span class="who">089L64</span>
+              <span class="dot">·</span><span class="proc">Invitación a 3</span></p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/fbfc59568b08458bac00e88b7559534a/procedimiento" target="_blank" rel="noopener">2026301890401 ↗</a>
           </div>
         </li>
         <li class="t t--urgent">
@@ -367,10 +1190,10 @@ h1{
           <div class="t__when"><time datetime="2026-09-17">2026-09-17</time>
             <span class="t__in">2 días</span></div>
           <div class="t__body">
-            <h3 class="t__title">Io-89-y24-930007995-n-47-2026</h3>
-            <p class="t__meta"><span class="who">SIOPVER</span>
+            <h3 class="t__title">N-376/26 Ofc Mantenimiento de Caminos Laterales</h3>
+            <p class="t__meta"><span class="who">CAPUFE</span>
               <span class="dot">·</span><span class="proc">Invitación a 3</span></p>
-            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/a605dc8c94f04b7a9d1daa23edf3ac0e/procedimiento" target="_blank" rel="noopener">IO-89-Y24-930007995-N-47-2026 ↗</a>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/d6d2b7b921fe4a448e759c056375af80/procedimiento" target="_blank" rel="noopener">N-376/26 OFC ↗</a>
           </div>
         </li>
         <li class="t t--urgent">
@@ -404,199 +1227,119 @@ h1{
           </div>
         </li>
         <li class="t t--urgent">
-          <div class="t__when"><time datetime="2026-09-17">2026-09-17</time>
-            <span class="t__in">2 días</span></div>
-          <div class="t__body">
-            <h3 class="t__title">302construcción de Pavimentación con Concreto Hidráulico, Guarniciones y Banquet</h3>
-            <p class="t__meta"><span class="who">089L64</span>
-              <span class="dot">·</span><span class="proc">Invitación a 3</span></p>
-            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/5065f21c09c3487c991b7a1cbb29e1f7/procedimiento" target="_blank" rel="noopener">2026301890302 ↗</a>
-          </div>
-        </li>
-        <li class="t t--urgent">
           <div class="t__when"><time datetime="2026-09-18">2026-09-18</time>
             <span class="t__in">3 días</span></div>
           <div class="t__body">
-            <h3 class="t__title">Trabajos de Conservación en la Carretera</h3>
-            <p class="t__meta"><span class="who">SOP</span>
-              <span class="dot">·</span><span class="proc">Invitación a 3</span></p>
-            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/2d1fccf7b74e45c1882067a111f3291b/procedimiento" target="_blank" rel="noopener">IO-87-Y03-928010997-N-87-2026 ↗</a>
-          </div>
-        </li>
-        <li class="t t--urgent">
-          <div class="t__when"><time datetime="2026-09-18">2026-09-18</time>
-            <span class="t__in">3 días</span></div>
-          <div class="t__body">
-            <h3 class="t__title">Rehabilitación Asfáltica, Bacheo Superficial</h3>
-            <p class="t__meta"><span class="who">SOP</span>
-              <span class="dot">·</span><span class="proc">Invitación a 3</span></p>
-            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/06c3c27b5f0b4281aab25c5004d0fce3/procedimiento" target="_blank" rel="noopener">NO. IO-87-Y03-928010997-N-92-2026 ↗</a>
-          </div>
-        </li>
-        <li class="t t--soon">
-          <div class="t__when"><time datetime="2026-09-21">2026-09-21</time>
-            <span class="t__in">6 días</span></div>
-          <div class="t__body">
-            <h3 class="t__title">N-385/26 Ofc Trabajos de Conservación en el Puente la Misión Cuerpo a y B Km 69+</h3>
-            <p class="t__meta"><span class="who">CAPUFE</span>
-              <span class="dot">·</span><span class="proc">Invitación a 3</span><span class="dot">·</span>junta 2026-09-15</p>
-            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/e1408a5e3f8440d6a777c3f8a617d44c/procedimiento" target="_blank" rel="noopener">N-385/26 OFC ↗</a>
-          </div>
-        </li>
-        <li class="t t--soon">
-          <div class="t__when"><time datetime="2026-09-21">2026-09-21</time>
-            <span class="t__in">6 días</span></div>
-          <div class="t__body">
-            <h3 class="t__title">Supervisión y Control de Calidad de la Obra: Trabajos de Conservaci</h3>
-            <p class="t__meta"><span class="who">CAPUFE</span>
-              <span class="dot">·</span><span class="proc">Invitación a 3</span><span class="dot">·</span>junta 2026-09-15</p>
-            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/042d5ad88a4f4b44b5f7b91eba06f8c9/procedimiento" target="_blank" rel="noopener">N-386/26 OFC SUPERVISIÓN Y CONTROL DE CALIDAD DE LA OBRA: TRABAJOS DE CONSERVACI ↗</a>
+            <h3 class="t__title">Pavimentación de Concreto Hidráulico de la 4TA. Avenida / Torres y Paseo</h3>
+            <p class="t__meta"><span class="who">087I82</span>
+              <span class="dot">·</span><span class="proc">Licitación pública</span></p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/1af75d1da6c443f58d770b215a862904/procedimiento" target="_blank" rel="noopener">SOPDUE-LP-003/2026 ↗</a>
           </div>
         </li>
         </ul>
       </section>
       <section class="seg">
-        <h2 class="seg__h">Electrificación y alumbrado</h2>
-        <p class="seg__n">14 convocatorias abiertas</p>
+        <h2 class="seg__h">Otra obra pública</h2>
+        <p class="seg__n">133 abiertas · 10 listadas</p>
         <ul class="list">
         <li class="t t--urgent">
-          <div class="t__when"><time datetime="2026-09-15">2026-09-15</time>
-            <span class="t__in">hoy</span></div>
+          <div class="t__when"><time datetime="2026-09-17">2026-09-17</time>
+            <span class="t__in">2 días</span></div>
           <div class="t__body">
-            <h3 class="t__title">Pavimentacion Calle Enrique Cardenas Gonzalez</h3>
-            <p class="t__meta"><span class="who">087I84</span>
+            <h3 class="t__title">N-372/26 Ofc Mantenimiento Menor de la Autopista Guadalajara Colima del Km 0+000</h3>
+            <p class="t__meta"><span class="who">CAPUFE</span>
               <span class="dot">·</span><span class="proc">Invitación a 3</span></p>
-            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/5c7a1f86c3ae4e6d97f6300f7b8879f7/procedimiento" target="_blank" rel="noopener">COP/IR-053/2026 ↗</a>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/e46be0be43ba48cbad6d7a27bbcca4aa/procedimiento" target="_blank" rel="noopener">N-372/26 OFC ↗</a>
           </div>
         </li>
         <li class="t t--urgent">
-          <div class="t__when"><time datetime="2026-09-15">2026-09-15</time>
-            <span class="t__in">hoy</span></div>
+          <div class="t__when"><time datetime="2026-09-17">2026-09-17</time>
+            <span class="t__in">2 días</span></div>
           <div class="t__body">
-            <h3 class="t__title">Electrificacion Hibrida Fotovoltaica</h3>
-            <p class="t__meta"><span class="who">090M25</span>
-              <span class="dot">·</span><span class="proc">Invitación a 3</span></p>
-            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/360bc68b1a34465c88875aa33fa47a6a/procedimiento" target="_blank" rel="noopener">FAISMUN-096-PANELES-PROAGUA-001-2026 ↗</a>
+            <h3 class="t__title">Obra Civil E Instalaciones para Adecuación de Sala de Espera Urgencias Hgz24 2DA</h3>
+            <p class="t__meta"><span class="who">IMSS</span>
+              <span class="dot">·</span><span class="proc">Licitación pública</span></p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/be9acf72eb5e40c6b150f1dbddac6f43/procedimiento" target="_blank" rel="noopener">LO-50-GYR-050GYR997-N-13-2026 ↗</a>
           </div>
         </li>
         <li class="t t--urgent">
-          <div class="t__when"><time datetime="2026-09-15">2026-09-15</time>
-            <span class="t__in">hoy</span></div>
+          <div class="t__when"><time datetime="2026-09-17">2026-09-17</time>
+            <span class="t__in">2 días</span></div>
           <div class="t__body">
-            <h3 class="t__title">Electrificacion Hibrida Fotovoltaica</h3>
-            <p class="t__meta"><span class="who">090M25</span>
+            <h3 class="t__title">N-373/26 Ofc Mantenimiento Menor de la Autopista Guadalajara Colima del Km 63+90</h3>
+            <p class="t__meta"><span class="who">CAPUFE</span>
               <span class="dot">·</span><span class="proc">Invitación a 3</span></p>
-            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/43c33cd5a76b4325b665113390982644/procedimiento" target="_blank" rel="noopener">FAISMUN-096-PANELES-PROAGUA-002-2026 ↗</a>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/8afc668c513a4c758a3263eee33cf1e4/procedimiento" target="_blank" rel="noopener">N-373/26 OFC ↗</a>
           </div>
         </li>
         <li class="t t--urgent">
-          <div class="t__when"><time datetime="2026-09-15">2026-09-15</time>
-            <span class="t__in">hoy</span></div>
+          <div class="t__when"><time datetime="2026-09-17">2026-09-17</time>
+            <span class="t__in">2 días</span></div>
           <div class="t__body">
-            <h3 class="t__title">Electrificacion Hibrida Fotovoltaica</h3>
-            <p class="t__meta"><span class="who">090M25</span>
-              <span class="dot">·</span><span class="proc">Invitación a 3</span></p>
-            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/8924e5e767bf4c28b16c826b4eebe1f4/procedimiento" target="_blank" rel="noopener">FAISMUN-096-PANELES-PROAGUA-003-2026 ↗</a>
+            <h3 class="t__title">Mtto. Fachadas, Acceso Pppal. E Inst. Electricas/hidrosan., Guarderia Ord. N°1</h3>
+            <p class="t__meta"><span class="who">IMSS</span>
+              <span class="dot">·</span><span class="proc">Licitación pública</span></p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/8f4eccf7433c40e39584d2f2cf967fd6/procedimiento" target="_blank" rel="noopener">LO-50-GYR-050GYR054-N-10-2026 ↗</a>
           </div>
         </li>
         <li class="t t--urgent">
-          <div class="t__when"><time datetime="2026-09-15">2026-09-15</time>
-            <span class="t__in">hoy</span></div>
+          <div class="t__when"><time datetime="2026-09-17">2026-09-17</time>
+            <span class="t__in">2 días</span></div>
           <div class="t__body">
-            <h3 class="t__title">Electrificacion Hibrida Fotovoltaica</h3>
-            <p class="t__meta"><span class="who">090M25</span>
+            <h3 class="t__title">Construccion del Complejo Caics Xochiquétzal - Encinos 2026</h3>
+            <p class="t__meta"><span class="who">HUEJOTZINGO</span>
               <span class="dot">·</span><span class="proc">Invitación a 3</span></p>
-            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/4e732e765a2c4f8a98acf69fa232a73d/procedimiento" target="_blank" rel="noopener">FAISMUN-096-PANELES-PROAGUA-004-2026 ↗</a>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/c1703c04fb2245dcb51cdf2e89fbed09/procedimiento" target="_blank" rel="noopener">CMOPLR3-024/HUE/26 ↗</a>
           </div>
         </li>
         <li class="t t--urgent">
-          <div class="t__when"><time datetime="2026-09-15">2026-09-15</time>
-            <span class="t__in">hoy</span></div>
+          <div class="t__when"><time datetime="2026-09-17">2026-09-17</time>
+            <span class="t__in">2 días</span></div>
           <div class="t__body">
-            <h3 class="t__title">Electrificacion Hibrida Fotovoltaica</h3>
-            <p class="t__meta"><span class="who">090M25</span>
+            <h3 class="t__title">Barrenación de Diamante Proyecto los Picos</h3>
+            <p class="t__meta"><span class="who">SGM</span>
+              <span class="dot">·</span><span class="proc">Licitación pública</span></p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/3e8f5a673d7f4d4a95447c24866875a2/procedimiento" target="_blank" rel="noopener">DID GERENCIA DE EXPLORACION RADIOACTIVOS ↗</a>
+          </div>
+        </li>
+        <li class="t t--urgent">
+          <div class="t__when"><time datetime="2026-09-17">2026-09-17</time>
+            <span class="t__in">2 días</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Rehabilitación Integral de Unidades Médicas y No Médicas en Áreas Exteriores 26</h3>
+            <p class="t__meta"><span class="who">IMSS</span>
+              <span class="dot">·</span><span class="proc">Licitación pública</span></p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/dec60d69d96e48ad8e065c5b07f57da8/procedimiento" target="_blank" rel="noopener">REHABILITACIÓN INTEGRAL DE UNIDADES MÉDICAS Y NO MÉDICAS EN ÁREAS EXTERIORES  26 ↗</a>
+          </div>
+        </li>
+        <li class="t t--urgent">
+          <div class="t__when"><time datetime="2026-09-17">2026-09-17</time>
+            <span class="t__in">2 días</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Mejora de Imagen de Inmuebles en el Hgr No.1, Hgz 8, Hgz 32, Hgz 36 y Hgz 35</h3>
+            <p class="t__meta"><span class="who">IMSS</span>
+              <span class="dot">·</span><span class="proc">Licitación pública</span></p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/98a5529a13964f1784b4e7d12c5fa40d/procedimiento" target="_blank" rel="noopener">LO-50-GYR-050GYR064-N-16-2026 ↗</a>
+          </div>
+        </li>
+        <li class="t t--urgent">
+          <div class="t__when"><time datetime="2026-09-17">2026-09-17</time>
+            <span class="t__in">2 días</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Lo-919018982-e21-2026</h3>
+            <p class="t__meta"><span class="who">ICIFED</span>
+              <span class="dot">·</span><span class="proc">Licitación pública</span></p>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/85b50573ad054164ade82c68ab2682d4/procedimiento" target="_blank" rel="noopener">LO-919018982-E21-2026 ↗</a>
+          </div>
+        </li>
+        <li class="t t--urgent">
+          <div class="t__when"><time datetime="2026-09-17">2026-09-17</time>
+            <span class="t__in">2 días</span></div>
+          <div class="t__body">
+            <h3 class="t__title">Trabajos de Mantenimiento y Mejora de Imagen de la Umr Yucatán, Mexicali, B.c.</h3>
+            <p class="t__meta"><span class="who">IMSS</span>
               <span class="dot">·</span><span class="proc">Invitación a 3</span></p>
-            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/f47b58a2a0954787b361a5f66a274369/procedimiento" target="_blank" rel="noopener">FAISMUN-096-PANELES-PROAGUA-005-2026 ↗</a>
-          </div>
-        </li>
-        <li class="t t--soon">
-          <div class="t__when"><time datetime="2026-09-21">2026-09-21</time>
-            <span class="t__in">6 días</span></div>
-          <div class="t__body">
-            <h3 class="t__title">Bachillerato Nacional &quot;margarita Maza&quot;, Heroica Ciudad de Huajuapan de León</h3>
-            <p class="t__meta"><span class="who">IOCIED</span>
-              <span class="dot">·</span><span class="proc">Licitación pública</span><span class="dot">·</span>junta 2026-09-15</p>
-            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/3782630c2ba24fa8b640529e01cc7fc4/procedimiento" target="_blank" rel="noopener">LO-79-019-920039997-N02-2026 ↗</a>
-          </div>
-        </li>
-        <li class="t t--soon">
-          <div class="t__when"><time datetime="2026-09-21">2026-09-21</time>
-            <span class="t__in">6 días</span></div>
-          <div class="t__body">
-            <h3 class="t__title">Bachillerato Nacional &quot;margarita Maza&quot;, Heroica Ciudad de Juchitán de Zaragoza</h3>
-            <p class="t__meta"><span class="who">IOCIED</span>
-              <span class="dot">·</span><span class="proc">Licitación pública</span><span class="dot">·</span>junta 2026-09-15</p>
-            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/3008cc755c174ef9a12eb708f0d568be/procedimiento" target="_blank" rel="noopener">LO-79-019-920039997-N03-2026 ↗</a>
-          </div>
-        </li>
-        <li class="t t--soon">
-          <div class="t__when"><time datetime="2026-09-21">2026-09-21</time>
-            <span class="t__in">6 días</span></div>
-          <div class="t__body">
-            <h3 class="t__title">Bachillerato Nacional &quot;margarita Maza&quot;, San Francisco Lachigoló</h3>
-            <p class="t__meta"><span class="who">IOCIED</span>
-              <span class="dot">·</span><span class="proc">Licitación pública</span><span class="dot">·</span>junta 2026-09-15</p>
-            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/65432c8fa79140829459b6a74c164902/procedimiento" target="_blank" rel="noopener">LO-79-019-920039997-N04-2026 ↗</a>
-          </div>
-        </li>
-        <li class="t t--soon">
-          <div class="t__when"><time datetime="2026-09-21">2026-09-21</time>
-            <span class="t__in">6 días</span></div>
-          <div class="t__body">
-            <h3 class="t__title">Bachillerato Nacional &quot;margarita Maza&quot;, Santa Cruz Xoxocotlán</h3>
-            <p class="t__meta"><span class="who">IOCIED</span>
-              <span class="dot">·</span><span class="proc">Licitación pública</span><span class="dot">·</span>junta 2026-09-15</p>
-            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/c71e847adf404e62988d442c97b9f6fc/procedimiento" target="_blank" rel="noopener">LO-79-019-920039997-N05-2026 ↗</a>
-          </div>
-        </li>
-        <li class="t t--soon">
-          <div class="t__when"><time datetime="2026-09-21">2026-09-21</time>
-            <span class="t__in">6 días</span></div>
-          <div class="t__body">
-            <h3 class="t__title">Bachillerato Nacional &quot;margarita Maza&quot;, San Jorge Nuchita</h3>
-            <p class="t__meta"><span class="who">IOCIED</span>
-              <span class="dot">·</span><span class="proc">Licitación pública</span><span class="dot">·</span>junta 2026-09-15</p>
-            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/830381e1c7d24ef297572f8d6a358c4f/procedimiento" target="_blank" rel="noopener">LO-79-019-920039997-N06-2026 ↗</a>
-          </div>
-        </li>
-        <li class="t t--soon">
-          <div class="t__when"><time datetime="2026-09-21">2026-09-21</time>
-            <span class="t__in">6 días</span></div>
-          <div class="t__body">
-            <h3 class="t__title">Bachillerato Nacional &quot;margarita Maza&quot;, Soledad Etla</h3>
-            <p class="t__meta"><span class="who">IOCIED</span>
-              <span class="dot">·</span><span class="proc">Licitación pública</span><span class="dot">·</span>junta 2026-09-15</p>
-            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/1403c45c20b145b3a5ebc0ce70bbaf03/procedimiento" target="_blank" rel="noopener">LO-79-019-920039997-N07-2026 ↗</a>
-          </div>
-        </li>
-        <li class="t t--normal">
-          <div class="t__when"><time datetime="2026-09-24">2026-09-24</time>
-            <span class="t__in">9 días</span></div>
-          <div class="t__body">
-            <h3 class="t__title">Supervisión y Verificación de Calidad en el Estado de Chiapas</h3>
-            <p class="t__meta"><span class="who">SICT</span>
-              <span class="dot">·</span><span class="proc">Licitación pública</span><span class="dot">·</span>junta 2026-09-17</p>
-            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/421c233e5ab648ccafbd5ce7160dd75e/procedimiento" target="_blank" rel="noopener">LO-09-210-009000999-N-945-2026 ↗</a>
-          </div>
-        </li>
-        <li class="t t--normal">
-          <div class="t__when"><time datetime="2026-09-25">2026-09-25</time>
-            <span class="t__in">10 días</span></div>
-          <div class="t__body">
-            <h3 class="t__title">Rehabilitación de Red de Alumbrado</h3>
-            <p class="t__meta"><span class="who">SOP</span>
-              <span class="dot">·</span><span class="proc">Invitación a 3</span><span class="dot">·</span>junta 2026-09-18</p>
-            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/1eb7d8adf2c7498a8b8a696cc42fd78c/procedimiento" target="_blank" rel="noopener">IO-87-Y03-928010997-N-96-2026 ↗</a>
+            <a class="ref" href="https://comprasmx.buengobierno.gob.mx/sitiopublico/#/sitiopublico/detalle/161d7743a02c423bb3934fe7cb02ea95/procedimiento" target="_blank" rel="noopener">DCSG-012-2026 ↗</a>
           </div>
         </li>
         </ul>
@@ -993,6 +1736,14 @@ h1{
         </ul>
       </section>
 
+  <section class="cta">
+    <h2>¿Le interesa alguna de estas?</h2>
+    <p>Escríbanos con el número del procedimiento y le decimos qué documentos pide y qué
+      hace falta de su parte. Preparamos los anexos, las manifestaciones, la acreditación
+      y la matriz de cumplimiento; los precios y las firmas son siempre suyos.</p>
+    <p class="cta__go"><a href="mailto:bernardo@licitante.mx?subject=Licitaci%C3%B3n%20abierta">bernardo@licitante.mx</a></p>
+  </section>
+
   <footer class="note">
     <p><b>Cómo leer esta lista.</b> La fecha es la <b>apertura de proposiciones</b>: el
       momento en que se abren las ofertas, no la junta de aclaraciones. Cada referencia
@@ -1007,8 +1758,16 @@ h1{
       estado «Abierto» pero se publicaron hace más de un año y nunca se cerraron. Aquí se
       listan únicamente los publicados en los últimos 90 días.</p>
     <p>Datos de ComprasMX (Secretaría Anticorrupción y Buen Gobierno) y SECOP II
-      (Colombia Compra Eficiente). Información pública
-      reproducida con fines informativos. Verifique siempre la convocatoria oficial antes
-      de preparar una propuesta: las fechas pueden modificarse.</p>
+      (Colombia Compra Eficiente), publicados bajo licencia <b>CC BY 4.0</b>. Información
+      pública reproducida con fines informativos. Verifique siempre la convocatoria oficial
+      antes de preparar una propuesta: las fechas pueden modificarse.</p>
+    <p><b>Aviso de privacidad.</b> Esta página no recaba ningún dato: no usa formularios,
+      cookies ni analítica. Si usted nos escribe, el responsable del tratamiento de los datos
+      que incluya en su mensaje es licitante.mx, con domicilio de contacto en
+      <a href="mailto:bernardo@licitante.mx">bernardo@licitante.mx</a>. Se usan únicamente para atender su consulta
+      y no se transfieren a terceros. Puede ejercer sus derechos de acceso, rectificación,
+      cancelación u oposición escribiendo a ese mismo correo.</p>
   </footer>
 </div>
+</body>
+</html>
